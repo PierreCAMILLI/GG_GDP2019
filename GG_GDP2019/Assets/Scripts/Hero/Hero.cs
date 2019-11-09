@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -17,21 +18,38 @@ public class Hero : MonoBehaviour
         get { return _speed; }
     }
 
+    [Header("Rotation")]
     [SerializeField]
     private float _rotationSpeed;
 
     [SerializeField]
     private float _magnitudeSpeed;
+
+    [Space]
+    [Header("Weapons")]
+    [SerializeField]
+    private AbstractWeapon.TypeEnum _usedWeapon;
+    public AbstractWeapon.TypeEnum UsedWeapon
+    {
+        get { return _usedWeapon; }
+        set { _usedWeapon = value; }
+    }
+    [SerializeField]
+    private AbstractWeapon[] _weapons;
     #endregion
 
-    #region
+    #region Private Variables
     private Vector2 _direction;
-    private Vector3 _forwardTarget;
+
+    private Dictionary<AbstractWeapon.TypeEnum, AbstractWeapon> _weaponsDict;
     #endregion
 
+    #region Unity Methods
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
+        
+        _weaponsDict = _weapons.ToDictionary(w => w.Type);
     }
 
     void FixedUpdate()
@@ -40,14 +58,41 @@ public class Hero : MonoBehaviour
         _characterController.SimpleMove(direction);
         if (direction.sqrMagnitude > Mathf.Epsilon)
         {
-            _forwardTarget = Vector3.RotateTowards(transform.forward, direction, _rotationSpeed * Time.fixedDeltaTime, _magnitudeSpeed * Time.fixedDeltaTime);
-            transform.forward = _forwardTarget;
+            Vector3 forwardTarget = Vector3.RotateTowards(transform.forward, direction, _rotationSpeed * Time.fixedDeltaTime, _magnitudeSpeed * Time.fixedDeltaTime);
+            transform.forward = forwardTarget;
         }
         _direction = Vector2.zero;
     }
+    #endregion
 
+    #region Public Methods
     public void Move(Vector2 direction)
     {
         _direction = direction;
     }
+
+    public void UseWeapon(AbstractWeapon.TypeEnum type, AbstractWeapon.UseState state)
+    {
+        switch (state)
+        {
+            case AbstractWeapon.UseState.Down:
+                _weaponsDict[type].OnUseDown();
+                break;
+            case AbstractWeapon.UseState.Pressed:
+                _weaponsDict[type].OnUse();
+                break;
+            case AbstractWeapon.UseState.Up:
+                _weaponsDict[type].OnUseUp();
+                break;
+        }
+    }
+
+    public void UseWeapon(AbstractWeapon.UseState state)
+    {
+        UseWeapon(_usedWeapon, state);
+    }
+    #endregion
+
+    #region Private Methods
+    #endregion
 }
