@@ -8,6 +8,8 @@ public class Hero : MonoBehaviour
 {
     #region Components
     private CharacterController _characterController;
+    [SerializeField]
+    Animator m_Animator;
     #endregion
 
     #region Serializable Fields
@@ -45,11 +47,14 @@ public class Hero : MonoBehaviour
     #endregion
 
     #region Unity Methods
+
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
         
         _weaponsDict = _weapons.ToDictionary(w => w.Type);
+
+
     }
 
     void FixedUpdate()
@@ -62,6 +67,10 @@ public class Hero : MonoBehaviour
             transform.forward = forwardTarget;
         }
         _direction = Vector2.zero;
+
+        bool isWalking = direction.magnitude > 0.01;
+        Debug.Log(isWalking);
+        m_Animator.SetBool("IsWalking", isWalking);
     }
     #endregion
 
