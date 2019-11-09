@@ -21,7 +21,18 @@ public class HeroController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(_inputs.Weapon))
+        {
+            _hero.UseWeapon(AbstractWeapon.UseState.Down);
+        }
+        if (Input.GetKey(_inputs.Weapon))
+        {
+            _hero.UseWeapon(AbstractWeapon.UseState.Pressed);
+        }
+        if (Input.GetKeyUp(_inputs.Weapon))
+        {
+            _hero.UseWeapon(AbstractWeapon.UseState.Up);
+        }
     }
 
     private void FixedUpdate()
