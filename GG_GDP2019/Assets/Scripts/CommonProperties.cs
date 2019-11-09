@@ -7,5 +7,4 @@ public class CommonProperties : SingletonScriptable<CommonProperties>
 {
     [SerializeField]
     public Color[] _colors;
-
 }
