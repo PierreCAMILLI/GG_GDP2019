@@ -32,7 +32,7 @@ public class Spotlight : MonoBehaviour
         {
             numberDetectedWaste++;
         }
-    }
+    }   
 
     public void OnTriggerExit(Collider other)
     {

@@ -26,7 +26,7 @@ public class PlayersSelectionManager : MonoBehaviour
             playerSelec.transform.SetPositionAndRotation(new Vector3(posXInitial + i * SpaceBetweenTwoPanels, posYInitial, 0), Quaternion.identity);
             playerSelec.GetComponent<Image>().color = CommonProperties.Instance._colors[i];
 
-            playerSelec.gameObject.SetActive(false);
+            //playerSelec.gameObject.SetActive(false);
         }
     }
 

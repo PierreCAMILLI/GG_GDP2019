@@ -10,6 +10,7 @@ public class GameEnterState : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         SceneManager.LoadScene("Scenes/gameScene");
+        SceneManager.UnloadSceneAsync("Scenes/menuScene");
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
