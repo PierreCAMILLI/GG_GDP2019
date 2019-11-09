@@ -8,6 +8,9 @@ public class Hero : MonoBehaviour
 {
     #region Components
     private CharacterController _characterController;
+    private Rigidbody _rigidbody;
+    [SerializeField]
+    Animator m_Animator;
     #endregion
 
     #region Serializable Fields
@@ -45,23 +48,34 @@ public class Hero : MonoBehaviour
     #endregion
 
     #region Unity Methods
+
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
-        
+        _rigidbody = GetComponent<Rigidbody>();
+
         _weaponsDict = _weapons.ToDictionary(w => w.Type);
     }
 
     void FixedUpdate()
     {
         Vector3 direction = _direction.XZ() * _speed;
-        _characterController.SimpleMove(direction);
-        if (direction.sqrMagnitude > Mathf.Epsilon)
+        if (_characterController != null && _characterController.enabled)
+        {
+            _characterController.SimpleMove(direction);
+        } else if (_rigidbody)
+        {
+            // _rigidbody.MovePosition(transform.position + direction * Time.fixedDeltaTime);
+            _rigidbody.MovePosition(transform.position + (direction * Time.fixedDeltaTime));
+        }
+        if (direction.sqrMagnitude > 0.1f)
         {
             Vector3 forwardTarget = Vector3.RotateTowards(transform.forward, direction, _rotationSpeed * Time.fixedDeltaTime, _magnitudeSpeed * Time.fixedDeltaTime);
             transform.forward = forwardTarget;
         }
         _direction = Vector2.zero;
+        
+        m_Animator.SetFloat("Speed", direction.magnitude);
     }
     #endregion
 
