@@ -26,19 +26,19 @@ public class Spotlight : MonoBehaviour
         transform.Translate(new Vector3(newdx, 0, newdz));
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.GetComponent<>() != null )
-        {
-            numberDetectedWaste++;
-        }
-    }
+    //public void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.GetComponent<>() != null )
+    //    {
+    //        numberDetectedWaste++;
+    //    }
+    //}
 
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.GetComponent<>() != null)
-        {
-            numberDetectedWaste--;
-        }
-    }
+    //public void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.GetComponent<>() != null)
+    //    {
+    //        numberDetectedWaste--;
+    //    }
+    //}
 }
