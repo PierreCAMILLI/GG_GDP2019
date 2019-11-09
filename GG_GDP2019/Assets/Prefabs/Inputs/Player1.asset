@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc8a575e08b484428d946dc9af037c2, type: 3}
   m_Name: Player1
   m_EditorClassIdentifier: 
-  _horizontalAxis: Horizontal
-  _verticalAxis: Vertical
+  _horizontalAxis: joystick 1 analog 0
+  _verticalAxis: joystick 1 analog 1
   _weapon: 113
