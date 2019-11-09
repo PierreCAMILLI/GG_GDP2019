@@ -44,11 +44,11 @@ public abstract class AbstractWeapon : ScriptableObject
     public virtual void OnAwake(Hero hero) { }
 
     // Called when the button is pressed
-    public virtual void OnUseDown() { }
+    public virtual void OnUseDown(Hero hero) { }
 
     // Called each frame when the button is pressed
-    public virtual void OnUse() { }
+    public virtual void OnUse(Hero hero) { }
     
     // Called when the button is released
-    public virtual void OnUseUp() { }
+    public virtual void OnUseUp(Hero hero) { }
 }
