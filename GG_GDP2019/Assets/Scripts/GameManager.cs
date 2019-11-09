@@ -31,13 +31,15 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     }
     public void GameOver() {
-        animator.SetTrigger("gameOver");
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Game"))
+            animator.SetTrigger("gameOver");
     }
 
     public void Quit() {
         animator.SetTrigger("quit"); 
     }
     public void NewGame() {
+        animator.ResetTrigger("gameOver");
         animator.SetTrigger("newGame"); 
     }
     public void Pause() {
