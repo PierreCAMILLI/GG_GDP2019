@@ -31,4 +31,11 @@ public class PlayerInputs : ScriptableObject
         }
     }
 
+    [SerializeField]
+    private KeyCode _weapon;
+    public KeyCode Weapon
+    {
+        get { return _weapon; }
+    }
+
 }

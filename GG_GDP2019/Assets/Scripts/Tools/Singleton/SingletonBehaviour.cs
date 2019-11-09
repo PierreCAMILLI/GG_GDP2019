@@ -46,5 +46,5 @@ public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonB
         // If the object is destroyed, detach it from the static instance.
         if (m_Instance == this)
             m_Instance = null;
-    }
+    } 
 }
