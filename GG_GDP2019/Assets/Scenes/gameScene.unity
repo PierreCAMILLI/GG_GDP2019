@@ -1889,6 +1889,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4996650859940232103, guid: f276fc9cfecc1784a8b7ef926f3e2dec,
+        type: 3}
+      propertyPath: baseTimer
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f276fc9cfecc1784a8b7ef926f3e2dec, type: 3}
 --- !u!1 &1465215869
@@ -1995,7 +2000,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51746
+  m_Name: pb_Mesh47830
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2428,6 +2433,21 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077450782519895589, guid: 58651aef6419b934286ef7f581f36531,
+        type: 3}
+      propertyPath: thresholdTime
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5935444219205933425, guid: 58651aef6419b934286ef7f581f36531,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7512784822275046574, guid: 58651aef6419b934286ef7f581f36531,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58651aef6419b934286ef7f581f36531, type: 3}

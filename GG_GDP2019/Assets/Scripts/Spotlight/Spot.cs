@@ -19,7 +19,7 @@ public class Spot : MonoBehaviour
     {
         Light light = GetComponent<Light>();
         CapsuleCollider collider = GetComponentInParent<CapsuleCollider>();
-        transform.position = new Vector3(transform.position.x, collider.radius / Mathf.Tan(light.spotAngle/2f * Mathf.PI / 180f), transform.position.z);
+        transform.position = new Vector3(transform.position.x, 1.2f * collider.radius / Mathf.Tan(light.spotAngle/2f * Mathf.PI / 180f), transform.position.z);
 
         Color colorr = Color.red;
         Color colorw = Color.white;

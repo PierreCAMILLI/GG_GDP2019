@@ -2455,7 +2455,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39664
+  m_Name: pb_Mesh34724
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2815,16 +2815,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2077450781151763274, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 0.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077450781151763274, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_SpotAngle
-      value: 36
-      objectReference: {fileID: 0}
     - target: {fileID: 2077450782519895584, guid: 58651aef6419b934286ef7f581f36531,
         type: 3}
       propertyPath: m_Name
@@ -2885,83 +2875,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2077450782519895587, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_Radius
-      value: 2.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077450782519895589, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077450782519895589, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: thresholdTime
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5695158648132371886, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5695158648132371886, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5695158648132371886, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5695158648132371886, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5695158648132371886, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5695158648132371886, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5935444219205933425, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: radius
-      value: 3.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5935444219205933425, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: numSegments
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 7512784822275046574, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_Positions.Array.data[1].z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7512784822275046574, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7512784822275046574, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_Positions.Array.data[1].x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7512784822275046574, guid: 58651aef6419b934286ef7f581f36531,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7512784822275046574, guid: 58651aef6419b934286ef7f581f36531, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58651aef6419b934286ef7f581f36531, type: 3}
 --- !u!1 &4692679211938981800 stripped
 GameObject:

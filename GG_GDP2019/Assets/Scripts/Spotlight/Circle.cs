@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class Circle : MonoBehaviour
 {
-
     CapsuleCollider newCollider;
 
     public int numSegments = 128;
 
+    private SpotlightController spotlightcontrol;
+
     void Start()
     {
         newCollider = GetComponentInParent<CapsuleCollider>();
+        spotlightcontrol = GetComponentInParent<SpotlightController>();
+
     }
 
     public void Update()
     {
         LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
-        Color c1 = new Color(0f, 0f, 0f, 255f);
-        //lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
-        lineRenderer.SetColors(c1, c1);
+
+        Color color = Color.Lerp(Color.white, Color.red, spotlightcontrol.timeDetectingWaste / spotlightcontrol.thresholdTime);
+       
+        lineRenderer.SetColors(color, color);
         lineRenderer.SetWidth(0.2f, 0.2f);
         lineRenderer.SetVertexCount(numSegments + 1);
         lineRenderer.useWorldSpace = false;
@@ -32,10 +36,11 @@ public class Circle : MonoBehaviour
         for (int i = 0; i < numSegments + 1; i++)
         {
             float x = radius * Mathf.Cos(theta);
-            float y = radius * Mathf.Sin(theta);
-            Vector3 pos = new Vector3(x, y, 2);
+            float z = radius * Mathf.Sin(theta);
+            Vector3 pos = new Vector3(x, 0, z);
             lineRenderer.SetPosition(i, pos);
             theta += deltaTheta;
         }
+
     }
 }
