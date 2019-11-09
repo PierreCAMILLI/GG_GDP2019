@@ -54,10 +54,10 @@ public class SpotlightController : MonoBehaviour
         {
             timeDetectingWaste = 0;
         }
-
+        Debug.Log(timeDetectingWaste);
         if (timeDetectingWaste > thresholdTime)
         {
-            //call the GameOver method
+            GameManager.Instance.GameOver();
         }
 
     }

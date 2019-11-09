@@ -69,7 +69,6 @@ public class Hero : MonoBehaviour
         _direction = Vector2.zero;
 
         bool isWalking = direction.magnitude > 0.01;
-        Debug.Log(isWalking);
         m_Animator.SetBool("IsWalking", isWalking);
     }
     #endregion
