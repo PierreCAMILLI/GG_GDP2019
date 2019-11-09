@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class WeaponDisplay : MonoBehaviour
+public class PersoDisplay : MonoBehaviour
 {
     [SerializeField]
     private int _selectedImage = 0;
@@ -26,16 +26,16 @@ public class WeaponDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ChangeWeapon(0);
+        ChangePerso(0);
         _images.ForEach(i => i.gameObject.SetActive(false));
         _images[_selectedImage].gameObject.SetActive(true);
     }
 
-    public void ChangeWeapon(int i)
+    public void ChangePerso(int i)
     {
         _selectedImage += i;
         if (_selectedImage < 0)
-            _selectedImage = _images.Count-1;
+            _selectedImage = _images.Count - 1;
         else if (_selectedImage >= _images.Count)
             _selectedImage = 0;
     }
