@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 6f61f3f266315344eb9a696586751083
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Fipps
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 33caf4f33bd0fad4a9b80596127a1b22, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
