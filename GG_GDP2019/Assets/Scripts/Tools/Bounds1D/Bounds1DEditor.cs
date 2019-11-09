@@ -3,7 +3,7 @@ using UnityEditor;
 using System.Collections;
 
 // Author: Pierre CAMILLI
-
+#if (UNITY_EDITOR)
 [CanEditMultipleObjects]
 [CustomPropertyDrawer(typeof(Bounds1D))]
 public class Bounds1DEditor : PropertyDrawer {
@@ -111,3 +111,4 @@ public class Bounds1DEditor : PropertyDrawer {
     }
 
 }
+#endif
