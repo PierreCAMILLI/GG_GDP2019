@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerSelection : MonoBehaviour
 {
@@ -16,8 +17,7 @@ public class PlayerSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        WeaponDisplay = GetComponent<WeaponDisplay>();
-        PersoDisplay = GetComponent<PersoDisplay>();
+        WeaponDisplay.GetComponent<Image>().color = CommonProperties.Instance._colors[Number];
     }
 
     // Update is called once per frame
