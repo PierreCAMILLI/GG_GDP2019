@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6cc8a575e08b484428d946dc9af037c2, type: 3}
-  m_Name: PlayerInputs
+  m_Name: Player1
   m_EditorClassIdentifier: 
-  _horizontalAxis: 
-  _verticalAxis: 
+  _horizontalAxis: Horizontal
+  _verticalAxis: Vertical

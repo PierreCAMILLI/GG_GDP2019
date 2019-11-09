@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Controls", menuName = "Controls/Controls", order = 1)]
+[CreateAssetMenu(fileName = "Controls", menuName = "Controls/Controls (Singleton)", order = 1)]
 public class Controls : SingletonScriptable<Controls>
 {
     [SerializeField]

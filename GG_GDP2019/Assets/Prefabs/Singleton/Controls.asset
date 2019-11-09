@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34be4c546aaf5464daa3860141a154c8, type: 3}
   m_Name: Controls
   m_EditorClassIdentifier: 
-  _playerInputs: []
+  _playerInputs:
+  - {fileID: 11400000, guid: 3e2ce81442d551f44b7762081065fd3a, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

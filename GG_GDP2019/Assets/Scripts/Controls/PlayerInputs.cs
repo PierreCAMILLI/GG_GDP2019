@@ -21,7 +21,14 @@ public class PlayerInputs : ScriptableObject
 
     public Vector2 Direction
     {
-        get { return new Vector2(Horizontal, Vertical); }
+        get {
+            Vector2 dir = new Vector2(Horizontal, Vertical);
+            if (dir.sqrMagnitude > 1f)
+            {
+                return dir.normalized;
+            }
+            return dir;
+        }
     }
 
 }
