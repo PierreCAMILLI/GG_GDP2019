@@ -9,6 +9,8 @@ public class Hero : MonoBehaviour
     #region Components
     private CharacterController _characterController;
     private Rigidbody _rigidbody;
+    [SerializeField]
+    Animator m_Animator;
     #endregion
 
     #region Serializable Fields
@@ -46,6 +48,7 @@ public class Hero : MonoBehaviour
     #endregion
 
     #region Unity Methods
+
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -71,6 +74,8 @@ public class Hero : MonoBehaviour
             transform.forward = forwardTarget;
         }
         _direction = Vector2.zero;
+        
+        m_Animator.SetFloat("Speed", direction.magnitude);
     }
     #endregion
 

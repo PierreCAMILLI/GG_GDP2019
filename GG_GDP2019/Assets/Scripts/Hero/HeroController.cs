@@ -16,6 +16,7 @@ public class HeroController : MonoBehaviour
     {
         _hero = GetComponent<Hero>();
         _inputs = Controls.Instance.GetPlayer(_playerNumber);
+
     }
 
     // Update is called once per frame
@@ -33,6 +34,7 @@ public class HeroController : MonoBehaviour
         {
             _hero.UseWeapon(AbstractWeapon.UseState.Up);
         }
+
     }
 
     private void FixedUpdate()
