@@ -31,6 +31,7 @@ public class GameSceneManager : MonoBehaviour
         hero.transform.rotation = baseHeroesPositions[playNum].rotation;
         HeroController heroController = hero.GetComponent<HeroController>();
         heroController.playerNumber = playNum;
+        hero.transform.Find("Circle").GetComponent<Circle_chara>().color = CommonProperties.Instance._colors[playNum];;
     }
     // Update is called once per frame
     void Update()
