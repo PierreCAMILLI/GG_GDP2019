@@ -1,45 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using InControl;
 
 [RequireComponent(typeof(Hero))]
 public class HeroController : MonoBehaviour
 {
     private Hero _hero;
 
-    private PlayerInputs _inputs;
+    private InputDevice _inputs;
 
     [SerializeField]
     private int _playerNumber;
 
-    void Awake()
+    void OnEnable()
     {
         _hero = GetComponent<Hero>();
         _inputs = Controls.Instance.GetPlayer(_playerNumber);
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(_inputs.Weapon))
+        if (_inputs.Action1)
         {
+            Debug.Log("Action 1");
             _hero.UseWeapon(AbstractWeapon.UseState.Down);
         }
-        if (Input.GetKey(_inputs.Weapon))
-        {
-            _hero.UseWeapon(AbstractWeapon.UseState.Pressed);
-        }
-        if (Input.GetKeyUp(_inputs.Weapon))
-        {
-            _hero.UseWeapon(AbstractWeapon.UseState.Up);
-        }
-
     }
 
     private void FixedUpdate()
     {
-        _hero.Move(InputToHeroDirection(_inputs.Direction));
+        _hero.Move(InputToHeroDirection(_inputs.Direction.Vector));
     }
 
     private Vector2 InputToHeroDirection(Vector2 direction)

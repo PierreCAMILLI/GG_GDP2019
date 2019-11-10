@@ -15,6 +15,10 @@ public class PlayersSelectionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SpaceBetweenTwoPanels = (Screen.width - posXInitial/2) / 4;
+        posXInitial = Screen.width / 8;
+        posYInitial = Screen.height / 2;
+
         playersSelection = new GameObject[4];
         for (int i = 0; i < 4; i++)
         {
