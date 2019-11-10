@@ -5,12 +5,11 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class Spot_lamp : MonoBehaviour
 {
-    private SpotlightController spotlightcontrol;
+    private Spotlight spotlight;
     // Start is called before the first frame update
     void Start()
     {
-        spotlightcontrol = GetComponentInParent<SpotlightController>();
-
+        spotlight = GetComponentInParent<Spotlight>();
 
     }
 
@@ -23,7 +22,7 @@ public class Spot_lamp : MonoBehaviour
 
         Color colorr = Color.red;
         Color colorw = Color.white;
-        light.color = Color.Lerp(colorw, colorr, spotlightcontrol.timeDetectingWaste/spotlightcontrol.thresholdTime);
+        light.color = Color.Lerp(colorw, colorr, spotlight.timeDetectingWaste/spotlight.thresholdTime);
     }
 
 

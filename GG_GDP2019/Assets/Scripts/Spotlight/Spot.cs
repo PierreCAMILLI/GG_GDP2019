@@ -5,11 +5,11 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class Spot : MonoBehaviour
 {
-    private SpotlightController spotlightcontrol;
+    private Spotlight spotlightcontrol;
     // Start is called before the first frame update
     void Start()
     {
-        spotlightcontrol = GetComponentInParent<SpotlightController>();
+        spotlightcontrol = GetComponentInParent<Spotlight>();
 
 
     }

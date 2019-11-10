@@ -5,11 +5,7 @@ using UnityEngine;
 public class SpotlightController : MonoBehaviour
 {
     public float speed = 0.2f;
-    float dx = 1.0f;
-    float dz = 1.0f;
     Vector2Int direction = new Vector2Int(1, 1);
-    public float timeDetectingWaste = 0.0f;
-    public float thresholdTime = 1000.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -43,22 +39,9 @@ public class SpotlightController : MonoBehaviour
         {
             direction[1] = 1;
         }
+        Vector2 translation = (new Vector2(direction[0], direction[1])).normalized * speed;
+        spotlight.Move(translation);
 
-        spotlight.Move(dx, dz, speed, direction);
-
-        if (spotlight.numberDetectedWaste != 0)
-        {
-            timeDetectingWaste += Time.deltaTime * spotlight.numberDetectedWaste;
-        }
-        else
-        {
-            timeDetectingWaste = 0;
-        }
-
-        if (timeDetectingWaste > thresholdTime)
-        {
-            GameManager.Instance.GameOver();
-        }
 
     }
 
