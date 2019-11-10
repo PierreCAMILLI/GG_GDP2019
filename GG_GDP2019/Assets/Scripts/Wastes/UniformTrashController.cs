@@ -19,7 +19,7 @@ public class UniformTrashController : MonoBehaviour
         {
 
             trashCreator.CreateTrash(new Vector3(Random.Range(-area.extents.x, area.extents.x),
-                                                   Random.Range(-area.extents.y, area.extents.y),
+                                                   Random.Range(0, area.extents.y),
                                                    Random.Range(-area.extents.z, area.extents.z)));
         }
     }

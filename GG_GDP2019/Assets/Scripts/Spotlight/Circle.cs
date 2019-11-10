@@ -8,12 +8,12 @@ public class Circle : MonoBehaviour
 
     public int numSegments = 128;
 
-    private SpotlightController spotlightcontrol;
+    private Spotlight spotlight;
 
     void Start()
     {
         newCollider = GetComponentInParent<CapsuleCollider>();
-        spotlightcontrol = GetComponentInParent<SpotlightController>();
+        spotlight = GetComponentInParent<Spotlight>();
 
     }
 
@@ -21,7 +21,7 @@ public class Circle : MonoBehaviour
     {
         LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
 
-        Color color = Color.Lerp(Color.white, Color.red, spotlightcontrol.timeDetectingWaste / spotlightcontrol.thresholdTime);
+        Color color = Color.Lerp(Color.white, Color.red, spotlight.timeDetectingWaste / spotlight.thresholdTime);
        
         lineRenderer.SetColors(color, color);
         lineRenderer.SetWidth(0.2f, 0.2f);

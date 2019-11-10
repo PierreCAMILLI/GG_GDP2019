@@ -5,6 +5,8 @@ using UnityEngine;
 public class Spotlight : MonoBehaviour
 {
     public int numberDetectedWaste = 0;
+    public float timeDetectingWaste = 0.0f;
+    public float thresholdTime = 1000.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,15 +17,30 @@ public class Spotlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (numberDetectedWaste != 0)
+        {
+            timeDetectingWaste += Time.deltaTime * numberDetectedWaste;
+        }
+        else
+        {
+            timeDetectingWaste = 0;
+        }
+
+        if (timeDetectingWaste > thresholdTime)
+        {
+            GameManager.Instance.GameOver();
+        }
     }
 
     //Move is called in the update method of SpotlightController 
-    public void Move(float dx, float dz, float speed, Vector2Int direction)
+    public void Move(Vector2 translation)
     {
-        float newdx = direction[0] * dx * speed * Time.deltaTime;
-        float newdz = direction[1] * dz * speed * Time.deltaTime;
-        transform.Translate(new Vector3(newdx, 0, newdz));
+        transform.Translate(translation.XZ());
+    }
+
+    public void MoveTowards(Vector2 direction, float speed) {
+        Vector2 translation = direction.magnitude > 1f ? direction.normalized : direction;
+        transform.Translate(translation.XZ() * speed * Time.deltaTime);
     }
 
     public void OnTriggerEnter(Collider other)

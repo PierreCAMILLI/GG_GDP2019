@@ -14,7 +14,7 @@ public class VacuumWeapon : AbstractWeapon
     {
         
     }
-    public override void OnUseDown()
+    public override void OnUseDown(Hero hero)
     {
         Debug.Log("Surprise ! Le joueur utilise un aspirateur !");
     }
