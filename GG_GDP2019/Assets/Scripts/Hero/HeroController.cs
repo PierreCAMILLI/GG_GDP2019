@@ -45,6 +45,8 @@ public class HeroController : MonoBehaviour
                 GameManager.Instance.Resume();
             }
         }
+        //foreach(Renderer r in transform.Find("perso1").GetComponentsInChildren<Renderer>())
+          //  r.material.mainTextureScale = new Vector2(1, 1);
     }
 
     private void FixedUpdate()
