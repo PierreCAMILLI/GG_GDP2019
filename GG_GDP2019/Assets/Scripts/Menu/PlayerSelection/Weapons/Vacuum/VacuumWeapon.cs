@@ -16,7 +16,7 @@ public class VacuumWeapon : AbstractWeapon
     }
     public override void OnUseDown(Hero hero)
     {
-        Transform vacuum = hero.gameObject.transform.Find("perso2").Find("vacuum").Find("vacuumActivable");
+        Transform vacuum = hero.gameObject.transform.Find("perso").Find("vacuum").Find("vacuumActivable");
         vacuum.gameObject.SetActive(true);
         VacuumSound v = vacuum.GetComponent<VacuumSound>();
         v.VacuumUsed = true;

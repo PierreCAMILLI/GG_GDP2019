@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549a5eb868d6eee459ddb23015652847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerNumber: 1
+  playerNumber: 0
 --- !u!54 &5164810347029762196
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 5164810346542960654}
   - component: {fileID: 8292393518502234031}
   m_Layer: 8
-  m_Name: perso2
+  m_Name: perso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -654,6 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySound: {fileID: 6790294558284060019}
+  VacuumUsed: 0
 --- !u!33 &5164810346691605375
 MeshFilter:
   m_ObjectHideFlags: 0
