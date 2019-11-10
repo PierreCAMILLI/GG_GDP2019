@@ -9,7 +9,9 @@ public class GameEnterState : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        GameManager.Instance.timer = GameManager.Instance.BaseTimer;
         SceneManager.LoadScene("Scenes/gameScene");
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
