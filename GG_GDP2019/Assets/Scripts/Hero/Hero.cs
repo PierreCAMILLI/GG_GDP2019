@@ -49,6 +49,12 @@ public class Hero : MonoBehaviour
     #endregion
 
     #region Private Variables
+    private static List<Hero> _heroes;
+    public static IList<Hero> Heroes
+    {
+        get { return _heroes; }
+    }
+
     private Vector2 _direction;
 
     private Dictionary<AbstractWeapon.TypeEnum, AbstractWeapon> _weaponsDict;
@@ -58,6 +64,11 @@ public class Hero : MonoBehaviour
 
     private void Awake()
     {
+        if (_heroes == null)
+        {
+            _heroes = new List<Hero>();
+        }
+        _heroes.Add(this);
         _characterController = GetComponent<CharacterController>();
         _rigidbody = GetComponent<Rigidbody>();
 
@@ -66,6 +77,11 @@ public class Hero : MonoBehaviour
         foreach (AbstractWeapon weapon in _weapons) {
             weapon.OnAwake(this);
         }
+    }
+
+    void OnDestroy()
+    {
+        _heroes.Remove(this);
     }
 
     void FixedUpdate()
