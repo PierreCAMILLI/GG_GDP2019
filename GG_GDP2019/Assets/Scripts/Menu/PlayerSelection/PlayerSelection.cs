@@ -7,17 +7,23 @@ public class PlayerSelection : MonoBehaviour
 {
 
     public int Number = 0;
-    public bool Selected = false;
-    public bool Connected = false;
     public int SelectedObject = 0;
 
     public WeaponDisplay WeaponDisplay;
     public PersoDisplay PersoDisplay;
 
+    [SerializeField]
+    public Image[] ImagesAColorer;
+
+    //delegate
+    public delegate void OnTryLaunchGame();
+    //event  
+    public static event OnTryLaunchGame tryLaunch;
+
     // Start is called before the first frame update
     void Start()
     {
-        WeaponDisplay.GetComponent<Image>().color = CommonProperties.Instance._colors[Number];
+
     }
 
     public void PersoSuivant()
@@ -34,6 +40,14 @@ public class PlayerSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        foreach (Image img in ImagesAColorer)
+        {
+            img.color = CommonProperties.Instance._colors[Number];
+        }
+    }
 
+    public void TryLaunchGame()
+    {
+        tryLaunch();
     }
 }
