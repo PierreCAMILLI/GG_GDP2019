@@ -16,7 +16,7 @@ public class TrashCreator : MonoBehaviour
         instance.transform.localPosition = position;
     }
 
-    public bool CreateTrashOutsideColliders(Vector3 position, Collider[] colliders)
+    public bool CreateTrashOutsideColliders(Vector3 position, List<Collider> colliders)
     {
         bool added = true;
         foreach (Collider collider in colliders)
