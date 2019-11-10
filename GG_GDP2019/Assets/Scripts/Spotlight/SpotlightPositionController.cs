@@ -14,22 +14,37 @@ public class SpotlightPositionController : MonoBehaviour
 
     [SerializeField]
     private float speed;
+
+    [SerializeField]
+    private float beginTime;
+    private bool began;
     // Start is called before the first frame update
     void Start()
     {
-        NewPosition(); 
+        
+        began = false;
+        targetPosition = positions[0];
+        Invoke("Begin", beginTime);
+    }
+
+    void Begin()
+    {
+        began = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = targetPosition.position - transform.position;
+        if (began)
+        {
+            Vector3 direction = targetPosition.position - transform.position;
 
 
-        spotlight.MoveTowards(direction.XZ(), speed);
+            spotlight.MoveTowards(direction.XZ(), speed);
 
-        if (direction.XZ().magnitude < 0.1f)
-            NewPosition();
+            if (direction.XZ().magnitude < 0.1f)
+                NewPosition();
+        }
     }
 
     void NewPosition()

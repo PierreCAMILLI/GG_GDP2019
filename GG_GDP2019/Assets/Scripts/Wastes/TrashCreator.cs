@@ -15,4 +15,17 @@ public class TrashCreator : MonoBehaviour
         instance.transform.parent = this.transform;
         instance.transform.localPosition = position;
     }
+
+    public bool CreateTrashOutsideColliders(Vector3 position, Collider[] colliders)
+    {
+        bool added = true;
+        foreach (Collider collider in colliders)
+        {
+            if (collider.ClosestPoint(position + this.transform.position) == position + this.transform.position)
+                added = false;
+        }
+        if(added)
+            CreateTrash(position);
+        return added;
+    }
 }
