@@ -39,6 +39,9 @@ public class Hero : MonoBehaviour
     }
     [SerializeField]
     private AbstractWeapon[] _weapons;
+
+    [SerializeField]
+    private AbstractWeapon[] _weaponsInstance;
     #endregion
 
     #region Private Variables
@@ -55,6 +58,10 @@ public class Hero : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
 
         _weaponsDict = _weapons.ToDictionary(w => w.Type);
+
+        foreach (AbstractWeapon weapon in _weapons) {
+            weapon.OnAwake(this);
+        }
     }
 
     void FixedUpdate()
@@ -90,13 +97,13 @@ public class Hero : MonoBehaviour
         switch (state)
         {
             case AbstractWeapon.UseState.Down:
-                _weaponsDict[type].OnUseDown();
+                _weaponsDict[type].OnUseDown(this);
                 break;
             case AbstractWeapon.UseState.Pressed:
-                _weaponsDict[type].OnUse();
+                _weaponsDict[type].OnUse(this);
                 break;
             case AbstractWeapon.UseState.Up:
-                _weaponsDict[type].OnUseUp();
+                _weaponsDict[type].OnUseUp(this);
                 break;
         }
     }

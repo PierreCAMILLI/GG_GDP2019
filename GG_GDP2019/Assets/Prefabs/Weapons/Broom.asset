@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Broom
   m_EditorClassIdentifier: 
   _type: 0
+  broom: {fileID: 5901677654858098665, guid: 8cc2f423c810abd46b01da959ab5376c, type: 3}
+  broomPosition: {x: 0.157, y: 0.15, z: 0.826}
