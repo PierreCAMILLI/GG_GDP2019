@@ -118,6 +118,7 @@ public class Hero : MonoBehaviour
     }
     #endregion
 
+
     #region Private Methods
     #endregion
 }

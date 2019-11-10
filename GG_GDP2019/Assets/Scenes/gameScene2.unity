@@ -2174,7 +2174,6 @@ MonoBehaviour:
     restrict: 0
   _zoomLimiter: 50
   distance: 20
-  constanteMagique: 0.57
 --- !u!1 &1338192796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,13 +2766,14 @@ MonoBehaviour:
   - {fileID: 84887342}
   - {fileID: 196861687}
   - {fileID: 1841107908}
+  obstacles: {fileID: 0}
 --- !u!43 &1739573606
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh40388
+  m_Name: pb_Mesh52890
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
