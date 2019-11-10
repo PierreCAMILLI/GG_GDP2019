@@ -15,15 +15,15 @@ public class Heros : MonoBehaviour
     void Start()
     {
         
+        for (int i = 0; i < _heros.Length; ++i)
+        {
+            _heros[i].gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < _heros.Length; ++i)
-        {
-            _heros[i].gameObject.SetActive(false);
-        }
         for (int i = 0; i < Controls.Instance.GamePads.Count; ++i)
         {
             _heros[i].gameObject.SetActive(true);

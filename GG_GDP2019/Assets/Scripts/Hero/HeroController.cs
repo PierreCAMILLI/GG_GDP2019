@@ -16,21 +16,25 @@ public class HeroController : MonoBehaviour
     void OnEnable()
     {
         _hero = GetComponent<Hero>();
-        _inputs = Controls.Instance.GetPlayer(_playerNumber);
     }
 
     // Update is called once per frame
     void Update()
     {
+        _inputs = Controls.Instance.GetPlayer(_playerNumber);
         if (_inputs.Action1.WasPressed)
         {
-            Debug.Log("Action 1");
             _hero.UseWeapon(AbstractWeapon.UseState.Down);
+        }
+        if (_inputs.Action1.WasReleased)
+        {
+            _hero.UseWeapon(AbstractWeapon.UseState.Up);
         }
     }
 
     private void FixedUpdate()
     {
+        _inputs = Controls.Instance.GetPlayer(_playerNumber);
         _hero.Move(InputToHeroDirection(_inputs.Direction.Vector));
     }
 

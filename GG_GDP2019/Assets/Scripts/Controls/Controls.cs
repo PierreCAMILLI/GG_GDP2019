@@ -9,9 +9,6 @@ public class Controls : SingletonBehaviour<Controls>
 {
     public List<InputDevice> GamePads;
 
-    [SerializeField]
-    private PlayerInputs[] _playerInputs;
-
     void Start()
     {
         GamePads = new List<InputDevice>();
@@ -45,7 +42,6 @@ public class Controls : SingletonBehaviour<Controls>
 
     public InputDevice GetPlayer(int i)
     {
-        Debug.Log(i);
         return GamePads[i];
     }
 }

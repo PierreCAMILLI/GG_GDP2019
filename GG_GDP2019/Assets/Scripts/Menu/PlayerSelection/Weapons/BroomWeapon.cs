@@ -17,17 +17,11 @@ public class BroomWeapon : AbstractWeapon
     }
     public override void OnUseDown(Hero hero)
     {
-        Transform broom = hero.transform.Find("Broom");
-        Transform broomCollider = broom.Find("broomCollider");
-        broomCollider.gameObject.SetActive(true);
-        broom.localRotation = Quaternion.Euler(-3, 0, 0);
+        hero.Animator.SetBool("BroomDown", true);
     }
 
     public override void OnUseUp(Hero hero)
     {
-        Transform broom = hero.transform.Find("Broom");
-        Transform broomCollider = broom.Find("broomCollider");
-        broomCollider.gameObject.SetActive(false);
-        broom.localRotation = Quaternion.Euler(-35, 0, 0);
+        hero.Animator.SetBool("BroomDown", false);
     }
 }
