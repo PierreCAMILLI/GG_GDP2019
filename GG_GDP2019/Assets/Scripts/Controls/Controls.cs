@@ -45,7 +45,6 @@ public class Controls : SingletonBehaviour<Controls>
 
     public InputDevice GetPlayer(int i)
     {
-        Debug.Log(i);
         return GamePads[i];
     }
 }
