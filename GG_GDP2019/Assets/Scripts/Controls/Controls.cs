@@ -9,9 +9,6 @@ public class Controls : SingletonBehaviour<Controls>
 {
     public List<InputDevice> GamePads;
 
-    [SerializeField]
-    private PlayerInputs[] _playerInputs;
-
     void Start()
     {
         GamePads = new List<InputDevice>();
