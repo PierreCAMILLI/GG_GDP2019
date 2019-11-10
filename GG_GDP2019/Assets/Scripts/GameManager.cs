@@ -8,12 +8,11 @@ public class GameManager : SingletonBehaviour<GameManager>
 {
     private Animator animator;
 
+    [Header("Timer")]
     [HideInInspector]
     public float timer;
-
     [SerializeField]
     private float baseTimer;
-
     public float BaseTimer
     {
         get => baseTimer;
@@ -34,10 +33,9 @@ public class GameManager : SingletonBehaviour<GameManager>
     // Update is called once per frame
     void Update()
     {
-        //Input update
-        
 
-        }
+    }
+
     public void GameOver() {
         if(animator.GetCurrentAnimatorStateInfo(0).IsName("Game"))
             animator.SetTrigger("gameOver");
@@ -56,5 +54,10 @@ public class GameManager : SingletonBehaviour<GameManager>
     public void Resume() {
         animator.SetTrigger("resume"); 
     }
-    
+
+    public void StartGame()
+    {
+        animator.SetTrigger("StartGame");
+    }
+
 }
