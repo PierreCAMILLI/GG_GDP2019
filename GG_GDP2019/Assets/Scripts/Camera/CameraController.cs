@@ -29,9 +29,9 @@ public class CameraController : MonoBehaviour
     {
         transform.position = _grouper.transform.position + (-_direction * distance);
 
-        float greatestDistance = _grouper.Bounds.size.x;
+        float greatestDistance = _grouper.Bounds.size.x / 2f;
         float newZoom = Mathf.Lerp(_fieldOfView.Min, _fieldOfView.Max, greatestDistance / _zoomLimiter);
-        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, newZoom, Time.deltaTime);
+        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, newZoom, 2 * Time.deltaTime);
     }
 
 
