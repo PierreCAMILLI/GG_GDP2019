@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _horizontalAxis: joystick 1 analog 0
   _verticalAxis: joystick 1 analog 1
-  _weapon: 32
+  _weapon: 113

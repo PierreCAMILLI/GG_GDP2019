@@ -8,8 +8,8 @@ public class SpotlightController : MonoBehaviour
     float dx = 1.0f;
     float dz = 1.0f;
     Vector2Int direction = new Vector2Int(1, 1);
-    float timeDetectingWaste = 0.0f;
-    float thresholdTime = 5.0f;
+    public float timeDetectingWaste = 0.0f;
+    public float thresholdTime = 1000.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -48,13 +48,13 @@ public class SpotlightController : MonoBehaviour
 
         if (spotlight.numberDetectedWaste != 0)
         {
-            timeDetectingWaste += Time.deltaTime;
+            timeDetectingWaste += Time.deltaTime * spotlight.numberDetectedWaste;
         }
         else
         {
             timeDetectingWaste = 0;
         }
-        Debug.Log(timeDetectingWaste);
+
         if (timeDetectingWaste > thresholdTime)
         {
             GameManager.Instance.GameOver();
