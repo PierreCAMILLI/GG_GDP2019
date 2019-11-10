@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using InControl;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,10 @@ public class PlayerInputs : ScriptableObject
     private string _horizontalAxis;
     public float Horizontal
     {
-        get { return Input.GetAxis(_horizontalAxis); }
+        get {
+            //InputDevice inputDevice;
+            //return inputDevice.Direction.Value.x;
+            return Input.GetAxis(_horizontalAxis); }
     }
 
     [SerializeField]
