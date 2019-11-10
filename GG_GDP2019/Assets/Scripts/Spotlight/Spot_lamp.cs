@@ -11,7 +11,6 @@ public class Spot_lamp : MonoBehaviour
     {
         spotlight = GetComponentInParent<Spotlight>();
 
-
     }
 
     // Update is called once per frame
