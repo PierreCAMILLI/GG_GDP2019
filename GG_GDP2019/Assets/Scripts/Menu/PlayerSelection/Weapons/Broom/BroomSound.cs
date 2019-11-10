@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BroomSound : MonoBehaviour
 {
-    public AudioSource mySound;
+    public AudioSource source;
+    public AudioClip sound;
     public GameObject perso;
     Animator anim;
 
@@ -13,19 +14,23 @@ public class BroomSound : MonoBehaviour
     {
         anim = perso.GetComponent<Animator>();
     }
-
+    public void PlaySound()
+    {
+        source.clip = sound;
+        source.Play();
+        source.loop = true;
+    }
     // Update is called once per frame
     void Update()
     {
-        if (anim.GetBool("BroomDown"))
+        if (!source.isPlaying && anim.GetBool("BroomDown"))
         {
-            mySound.enabled = true;
-            mySound.loop = true;
+            PlaySound();
         }
-        else
+        if (!anim.GetBool("BroomDown"))
         {
-            mySound.enabled = false;
-            mySound.loop = false;
+            source.Stop();
+            source.loop = false;
         }
     }
 }
