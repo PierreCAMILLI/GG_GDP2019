@@ -7,7 +7,7 @@ using InControl;
 public class PlayersSelectionManager : MonoBehaviour
 {
 
-    private GameObject[] playersSelection;
+    private PlayerSelection[] playersSelection;
     public PlayerSelection PrefabPanel;
 
     //Positionnement des panels
@@ -33,13 +33,13 @@ public class PlayersSelectionManager : MonoBehaviour
         posXInitial = Screen.width / 8;
         posYInitial = Screen.height / 2;
 
-        playersSelection = new GameObject[4];
+        playersSelection = new PlayerSelection[4];
         for (int i = 0; i < 4; i++)
         {
             PlayerSelection playerSelec = Instantiate(PrefabPanel, GetComponent<Canvas>().transform);
 
             playerSelec.Number = i;
-            playersSelection[i] = playerSelec.gameObject;
+            playersSelection[i] = playerSelec;
 
             playerSelec.transform.SetPositionAndRotation(new Vector3(posXInitial + i * SpaceBetweenTwoPanels, posYInitial, 0), Quaternion.identity);
             playerSelec.GetComponent<Image>().color = CommonProperties.Instance._colors[i];
@@ -66,11 +66,22 @@ public class PlayersSelectionManager : MonoBehaviour
                         Debug.Log("Player Here !!");
                         PlayersHere[i] = true;
                     }
-                    else if (inputDevice.Action1.WasPressed && PlayersHere[i])
+                    else if (PlayersHere[i])
                     {
-                        Debug.Log("Player Ready !!");
-                        PlayersReady[i] = true;
-                        numberOfPlayersReady++;
+                        if (inputDevice.Action1.WasPressed)
+                        {
+                            Debug.Log("Player Ready !!");
+                            PlayersReady[i] = true;
+                            numberOfPlayersReady++;
+                        }
+                        else if (inputDevice.Direction.WasPressed && inputDevice.Direction.X > 0)
+                        {
+                            playersSelection[i].PersoSuivant();
+                        }
+                        else if (inputDevice.Direction.WasPressed && inputDevice.Direction.X < 0)
+                        {
+                            playersSelection[i].PersoPrecedent();
+                        }
                     }
                 }
             }

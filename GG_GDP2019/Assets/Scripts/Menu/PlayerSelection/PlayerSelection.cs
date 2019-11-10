@@ -20,19 +20,20 @@ public class PlayerSelection : MonoBehaviour
         WeaponDisplay.GetComponent<Image>().color = CommonProperties.Instance._colors[Number];
     }
 
+    public void PersoSuivant()
+    {
+        WeaponDisplay.ChangeWeapon(1);
+        PersoDisplay.ChangePerso(1);
+    }
+    public void PersoPrecedent()
+    {
+        WeaponDisplay.ChangeWeapon(-1);
+        PersoDisplay.ChangePerso(-1);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        //if (Controls.GetPlayer(Number).LeftDown())
-        //{
-        //    WeaponDisplay.ChangeWeapon(-1);
-        //    PersoDisplay.ChangePerso(-1);
-        //}
-        //else if (Controls.GetPlayer(Number).Instance.RightDown())
-        //{
-        //    WeaponDisplay.ChangeWeapon(1);
-        //    PersoDisplay.ChangePerso(1);
-        //}
 
     }
 }
