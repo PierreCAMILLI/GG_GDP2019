@@ -103,6 +103,21 @@ public class PlayersSelectionManager : MonoBehaviour
     {
         if (numberOfPlayersConnected == numberOfPlayersReady && numberOfPlayersConnected != 0)
         {
+            int playerCount = 0;
+
+            for (int i = 0; i < playersSelection.Length; i++)
+            {
+                if (playersSelection[i].present)
+                    playerCount++;
+            }
+            int[] playerSel = new int[playerCount];
+
+            for (int i = 0; i < playersSelection.Length; i++)
+            {
+                if(playersSelection[i].present)
+                    playerSel[playersSelection[i].Number] = playersSelection[i].WeaponDisplay.SelectedImage;
+            }
+            GameManager.Instance.playerSelection = playerSel;
             GameManager.Instance.NewGame();
         }
     }
