@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1605710948}
+  - component: {fileID: 3955223915443963239}
   - component: {fileID: 1605710949}
   m_Layer: 0
   m_Name: sound
@@ -24,13 +25,27 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605710947}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.21263106, y: -0.67437977, z: -0.21263106, w: 0.67437977}
+  m_LocalPosition: {x: 0, y: 0.48999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 9073797969629049956}
-  m_RootOrder: 2
+  m_Father: {fileID: 7986256082299842495}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3955223915443963239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605710947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981a0ebd1aac1a5479422718ee4a97ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySound: {fileID: 1605710949}
+  perso: {fileID: 6381521785939959212}
 --- !u!82 &1605710949
 AudioSource:
   m_ObjectHideFlags: 0
@@ -43,7 +58,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1af94240828b74942a43a50c8f0d8438, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.272
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -87,7 +102,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -381,7 +396,6 @@ Transform:
   m_Children:
   - {fileID: 5775326382359127492}
   - {fileID: 5049959710302636071}
-  - {fileID: 1605710948}
   m_Father: {fileID: 7986256082299842495}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -35, y: 0, z: 0}
