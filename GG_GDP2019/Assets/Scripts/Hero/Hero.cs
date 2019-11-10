@@ -11,6 +11,10 @@ public class Hero : MonoBehaviour
     private Rigidbody _rigidbody;
     [SerializeField]
     Animator m_Animator;
+    public Animator Animator
+    {
+        get { return m_Animator; }
+    }
     #endregion
 
     #region Serializable Fields

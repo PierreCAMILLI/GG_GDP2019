@@ -21,7 +21,6 @@ public class HeroController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("pouf");
         _inputs = Controls.Instance.GetPlayer(_playerNumber);
         if (_inputs.Action1.WasPressed)
         {
