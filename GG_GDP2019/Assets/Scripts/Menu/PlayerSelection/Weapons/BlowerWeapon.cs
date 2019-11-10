@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Blower", menuName = "Weapons/Blower", order = 2)]
+[CreateAssetMenu(fileName = "Blower", menuName = "Weapons/Blower", order = 3)]
 public class BlowerWeapon : AbstractWeapon
 {
     [SerializeField]
