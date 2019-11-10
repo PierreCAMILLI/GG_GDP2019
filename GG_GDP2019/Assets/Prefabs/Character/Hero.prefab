@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981a0ebd1aac1a5479422718ee4a97ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mySound: {fileID: 1605710949}
+  source: {fileID: 1605710949}
+  sound: {fileID: 8300000, guid: 1af94240828b74942a43a50c8f0d8438, type: 3}
   perso: {fileID: 6381521785939959212}
 --- !u!82 &1605710949
 AudioSource:
@@ -58,7 +59,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1af94240828b74942a43a50c8f0d8438, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.272
+  m_Volume: 0.49
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -740,7 +741,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 7f6e782e57dfe43c2813713a45b79b26,
         type: 3}
       propertyPath: m_Name
-      value: perso1
+      value: perso
       objectReference: {fileID: 0}
     - target: {fileID: -140188818897300537, guid: 7f6e782e57dfe43c2813713a45b79b26,
         type: 3}

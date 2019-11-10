@@ -16,19 +16,21 @@ public class VacuumWeapon : AbstractWeapon
     }
     public override void OnUseDown(Hero hero)
     {
-        Transform vacuum = hero.gameObject.transform.Find("perso2").Find("vacuum").Find("vacuumActivable");
+        Transform vacuum = hero.gameObject.transform.Find("perso").Find("vacuum").Find("vacuumActivable");
         vacuum.gameObject.SetActive(true);
-        VacuumSound v = vacuum.GetComponent<VacuumSound>();
-        v.VacuumUsed = true;
-
+        Transform v = hero.gameObject.transform.Find("perso").Find("vacuum");
+        VacuumSound vs = v.GetComponent<VacuumSound>();
+        vs.PlaySound();
+        vs.VacuumUsed = true;
     }
 
     public override void OnUseUp(Hero hero)
     {
-        Transform vacuum = hero.gameObject.transform.Find("perso2").Find("vacuum").Find("vacuumActivable");
+        Transform vacuum = hero.gameObject.transform.Find("perso").Find("vacuum").Find("vacuumActivable");
         vacuum.gameObject.SetActive(false);
-        VacuumSound v = vacuum.GetComponent<VacuumSound>();
-        v.VacuumUsed = false;
+        Transform v = hero.gameObject.transform.Find("perso").Find("vacuum");
+        VacuumSound vs = v.GetComponent<VacuumSound>();
+        vs.VacuumUsed = false;
     }
 
 

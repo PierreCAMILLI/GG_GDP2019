@@ -12,6 +12,9 @@ public class GameSceneManager : MonoBehaviour
 
     [SerializeField]
     private Transform[] baseHeroesPositions;
+
+    [SerializeField]
+    private float[] tints;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,9 +31,12 @@ public class GameSceneManager : MonoBehaviour
         GameObject hero = Instantiate(heroModels[playSel], baseHeroesPositions[playNum].position, baseHeroesPositions[playNum].rotation, heroes);
         HeroController heroController = hero.GetComponent<HeroController>();
         heroController.playerNumber = playNum;
-        hero.transform.Find("Circle").GetComponent<Circle_chara>().color = CommonProperties.Instance._colors[playNum];;
+        hero.transform.Find("Circle").GetComponent<Circle_chara>().color = CommonProperties.Instance._colors[playNum];
+
+        foreach (Renderer r in hero.transform.Find("perso").GetComponentsInChildren<Renderer>())
+            r.material.mainTextureScale = new Vector2(tints[playSel * 4 + playNum], tints[playSel * 4 + playNum]);
     }
-    // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         
