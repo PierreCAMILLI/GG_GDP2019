@@ -14,6 +14,10 @@ public class GameManager : SingletonBehaviour<GameManager>
     public float timer;
     [SerializeField]
     private float baseTimer;
+
+    [SerializeField]
+    public int[] playerSelection;
+
     public float BaseTimer
     {
         get => baseTimer;

@@ -7,7 +7,7 @@ public class TransformGrouper : MonoBehaviour
     [SerializeField]
     private List<Transform> _transforms;
 
-    private Bounds _bounds;
+    protected Bounds _bounds;
     public Bounds Bounds
     {
         get { return _bounds; }
