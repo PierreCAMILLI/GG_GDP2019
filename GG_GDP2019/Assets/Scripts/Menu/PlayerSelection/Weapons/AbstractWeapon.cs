@@ -14,6 +14,7 @@ public abstract class AbstractWeapon : ScriptableObject
     public enum TypeEnum
     {
         Broom,
+        Vacuum,
         Blower
     }
 

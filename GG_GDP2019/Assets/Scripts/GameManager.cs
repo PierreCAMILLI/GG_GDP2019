@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : SingletonBehaviour<GameManager>
 {
     private Animator animator;
-    public InputDevice[] GamePads;
-    private int j = 0;
 
     [HideInInspector]
     public float timer;
@@ -30,19 +28,7 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     private void Start()
     {
-        GamePads = new InputDevice[4];
 
-        for (int i = 0; i < InputManager.ActiveDevices.Count; i++)
-        {
-            if (InputManager.ActiveDevices[i].IsAttached)
-            {
-                GamePads[j] = InputManager.ActiveDevices[i];
-                Debug.Log(GamePads[j].GUID);
-                j++;
-                if (j >= 4)
-                    break;
-            }
-        }
     }
 
     // Update is called once per frame
