@@ -61,12 +61,12 @@ public class PlayersSelectionManager : MonoBehaviour
                 if (i < numberOfPlayersConnected)
                 {
                     InputDevice inputDevice = Controls.Instance.GetPlayer(i);
-                    if (inputDevice.Action1 && !PlayersHere[i])
+                    if (inputDevice.Action1.WasPressed && !PlayersHere[i])
                     {
                         Debug.Log("Player Here !!");
                         PlayersHere[i] = true;
                     }
-                    else if (inputDevice.Action1 && PlayersHere[i])
+                    else if (inputDevice.Action1.WasPressed && PlayersHere[i])
                     {
                         Debug.Log("Player Ready !!");
                         PlayersReady[i] = true;
