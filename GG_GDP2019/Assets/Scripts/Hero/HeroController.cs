@@ -11,7 +11,7 @@ public class HeroController : MonoBehaviour
     private InputDevice _inputs;
 
     [SerializeField]
-    private int _playerNumber;
+    public int playerNumber;
 
     void OnEnable()
     {
@@ -21,7 +21,7 @@ public class HeroController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _inputs = Controls.Instance.GetPlayer(_playerNumber);
+        _inputs = Controls.Instance.GetPlayer(playerNumber);
         if (_inputs.Action1.WasPressed)
         {
             _hero.UseWeapon(AbstractWeapon.UseState.Down);
@@ -34,7 +34,7 @@ public class HeroController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _inputs = Controls.Instance.GetPlayer(_playerNumber);
+        _inputs = Controls.Instance.GetPlayer(playerNumber);
         _hero.Move(InputToHeroDirection(_inputs.Direction.Vector));
     }
 

@@ -46,7 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dontDestroyOnLoad: 1
   timer: 0
-  baseTimer: 10
+  baseTimer: 90
+  playerSelection: 0000000000000000
 --- !u!95 &4996650859940232105
 Animator:
   serializedVersion: 3

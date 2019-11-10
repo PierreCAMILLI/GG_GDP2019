@@ -2,16 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TransformGrouper : MonoBehaviour
+public class TransformGrouperHeroes : TransformGrouper
 {
     [SerializeField]
-    private List<Transform> _transforms;
-
-    protected Bounds _bounds;
-    public Bounds Bounds
-    {
-        get { return _bounds; }
-    }
+    private Transform heroes;
 
     // Start is called before the first frame update
     void Awake()
@@ -29,14 +23,13 @@ public class TransformGrouper : MonoBehaviour
     private void UpdateBounds()
     {
         _bounds = new Bounds();
-
-        if (_transforms.Count > 0)
+        if (heroes.childCount > 0)
         {
-            _bounds = new Bounds(_transforms[0].position, Vector3.zero);
-            for (int i = 1; i < _transforms.Count; ++i)
+            _bounds = new Bounds(heroes.GetChild(0).position, Vector3.zero);
+            for (int i = 1; i < heroes.childCount; ++i)
             {
-                if(_transforms[i].gameObject.activeInHierarchy)
-                    _bounds.Encapsulate(_transforms[i].position);
+                if(heroes.GetChild(i).gameObject.activeInHierarchy)
+                    _bounds.Encapsulate(heroes.GetChild(i).position);
             }
         }
     }
