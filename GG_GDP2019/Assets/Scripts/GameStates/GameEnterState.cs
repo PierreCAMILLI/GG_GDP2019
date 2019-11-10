@@ -10,7 +10,7 @@ public class GameEnterState : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         GameManager.Instance.timer = GameManager.Instance.BaseTimer;
-        SceneManager.LoadScene("Scenes/uiGameScene");
+        SceneManager.LoadScene("Scenes/gameScene");
 
     }
 
