@@ -35,7 +35,8 @@ public class TransformGrouper : MonoBehaviour
             _bounds = new Bounds(_transforms[0].position, Vector3.zero);
             for (int i = 1; i < _transforms.Count; ++i)
             {
-                _bounds.Encapsulate(_transforms[i].position);
+                if(_transforms[i].gameObject.activeInHierarchy)
+                    _bounds.Encapsulate(_transforms[i].position);
             }
         }
     }
