@@ -19,6 +19,7 @@ public class Controls : SingletonBehaviour<Controls>
 
     void Update()
     {
+        //if (GamePads.Count < 4 && GameManager.Instance.State == "MenuSelection")
         if (GamePads.Count < 4)
         {
             UpdatePlayerNumber();

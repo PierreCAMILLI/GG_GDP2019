@@ -22,7 +22,7 @@ public class HeroController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_inputs.Action1)
+        if (_inputs.Action1.WasPressed)
         {
             Debug.Log("Action 1");
             _hero.UseWeapon(AbstractWeapon.UseState.Down);

@@ -14,10 +14,12 @@ public class VacuumWeapon : AbstractWeapon
     {
         
     }
+    /*
     public override void OnUseDown()
     {
         Debug.Log("Surprise ! Le joueur utilise un aspirateur !");
     }
+    */
 
     // Update is called once per frame
     void Update()
