@@ -16,14 +16,14 @@ public class VacuumWeapon : AbstractWeapon
     }
     public override void OnUseDown(Hero hero)
     {
-        Transform vacuum = hero.gameObject.transform.Find("vacuum");
-        //vacuum.gameObject.SetActive(true);
+        Transform vacuum = hero.gameObject.transform.Find("perso2").Find("vacuum").Find("vacuumActivable");
+        vacuum.gameObject.SetActive(true);
     }
 
     public override void OnUseUp(Hero hero)
     {
-        Transform vacuum = hero.gameObject.transform.Find("vacuum");
-        //vacuum.gameObject.SetActive(false);
+        Transform vacuum = hero.gameObject.transform.Find("perso2").Find("vacuum").Find("vacuumActivable");
+        vacuum.gameObject.SetActive(false);
     }
 
 
