@@ -46,8 +46,14 @@ public class PlayersSelectionManager : MonoBehaviour
 
             //playerSelec.gameObject.SetActive(false);
         }
+
+        PlayerSelection.tryLaunch += TestLaunchGame;
     }
 
+    void OnDisable()
+    {
+        PlayerSelection.tryLaunch -= TestLaunchGame;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -73,6 +79,9 @@ public class PlayersSelectionManager : MonoBehaviour
                             Debug.Log("Player Ready !!");
                             PlayersReady[i] = true;
                             numberOfPlayersReady++;
+
+                            playersSelection[i].GetComponent<Animator>().SetBool("Ready", true);
+
                         }
                         else if (inputDevice.Direction.WasPressed && inputDevice.Direction.X > 0)
                         {
@@ -88,7 +97,10 @@ public class PlayersSelectionManager : MonoBehaviour
             else
                 numberOfPlayersReady++;
         }
-        if(numberOfPlayersConnected == numberOfPlayersReady && numberOfPlayersConnected != 0)
+    }
+    public void TestLaunchGame()
+    {
+        if (numberOfPlayersConnected == numberOfPlayersReady && numberOfPlayersConnected != 0)
         {
             GameManager.Instance.NewGame();
         }
