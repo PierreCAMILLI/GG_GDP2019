@@ -16,8 +16,16 @@ public class VacuumWeapon : AbstractWeapon
     }
     public override void OnUseDown(Hero hero)
     {
-        Debug.Log("Surprise ! Le joueur utilise un aspirateur !");
+        Transform vacuum = hero.gameObject.transform.Find("vacuum");
+        //vacuum.gameObject.SetActive(true);
     }
+
+    public override void OnUseUp(Hero hero)
+    {
+        Transform vacuum = hero.gameObject.transform.Find("vacuum");
+        //vacuum.gameObject.SetActive(false);
+    }
+
 
     // Update is called once per frame
     void Update()

@@ -77,7 +77,7 @@ public class Hero : MonoBehaviour
         } else if (_rigidbody)
         {
             // _rigidbody.MovePosition(transform.position + direction * Time.fixedDeltaTime);
-            _rigidbody.MovePosition(transform.position + (direction * Time.fixedDeltaTime));
+            _rigidbody.AddForce(direction, ForceMode.VelocityChange);
         }
         if (direction.sqrMagnitude > 0.1f)
         {

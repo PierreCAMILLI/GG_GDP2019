@@ -8,6 +8,8 @@ public class Circle_chara : MonoBehaviour
     public Color color;
     CharacterController newCollider;
 
+    [SerializeField]
+    private float width;
 
     void Start()
     {
@@ -18,7 +20,7 @@ public class Circle_chara : MonoBehaviour
     {
         LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();       
         lineRenderer.SetColors(color, color);
-        lineRenderer.SetWidth(0.1f, 0.1f);
+        lineRenderer.SetWidth(width, width);
         lineRenderer.SetVertexCount(numSegments + 1);
         lineRenderer.useWorldSpace = false;
 
