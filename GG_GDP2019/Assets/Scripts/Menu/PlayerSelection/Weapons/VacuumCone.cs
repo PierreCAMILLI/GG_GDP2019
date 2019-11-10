@@ -8,6 +8,9 @@ public class VacuumCone : MonoBehaviour
     Transform transform_hero;
     Rigidbody rigidbody;
 
+    [SerializeField]
+    private float ForceConstant;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +25,10 @@ public class VacuumCone : MonoBehaviour
         {
 
             rigidbody = other.GetComponent<Rigidbody>();
-            Vector3 vectForce = (transform_hero.position - other.transform.position).X0Z() / 2f;
-            rigidbody.AddForce(vectForce, ForceMode.Force);
+            Vector3 direction = (transform_hero.position - other.transform.position);
+            float distance = direction.magnitude;
+            Vector3 force = ForceConstant * direction.normalized;
+            rigidbody.AddForce(force, ForceMode.Force);
             
 
         }
