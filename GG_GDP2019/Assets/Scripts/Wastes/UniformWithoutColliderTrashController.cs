@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class UniformWithoutColliderTrashController : MonoBehaviour
@@ -12,10 +13,16 @@ public class UniformWithoutColliderTrashController : MonoBehaviour
     private float trashDensity;
 
     [SerializeField]
-    private Collider[] colliders;
+    private List<Collider> colliders;
+
+    [SerializeField]
+    private Transform obstacles;
     // Start is called before the first frame update
     void Start()
     {
+        foreach(Transform child in obstacles)
+            colliders.AddRange(child.GetComponentsInChildren<Collider>());
+
         int trashCount = (int) (4 * area.extents.x * area.extents.z * trashDensity);
 
         for(int i = 0; i < trashCount; i ++)
