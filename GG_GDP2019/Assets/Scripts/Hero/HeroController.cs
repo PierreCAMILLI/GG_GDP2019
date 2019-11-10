@@ -21,21 +21,27 @@ public class HeroController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _inputs = Controls.Instance.GetPlayer(playerNumber);
-        if (_inputs.Action1.WasPressed)
+        if (GameManager.Instance.IsState("Game"))
         {
-            _hero.UseWeapon(AbstractWeapon.UseState.Down);
-        }
-        if (_inputs.Action1.WasReleased)
-        {
-            _hero.UseWeapon(AbstractWeapon.UseState.Up);
+            _inputs = Controls.Instance.GetPlayer(playerNumber);
+            if (_inputs.Action1.WasPressed)
+            {
+                _hero.UseWeapon(AbstractWeapon.UseState.Down);
+            }
+            if (_inputs.Action1.WasReleased)
+            {
+                _hero.UseWeapon(AbstractWeapon.UseState.Up);
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        _inputs = Controls.Instance.GetPlayer(playerNumber);
-        _hero.Move(InputToHeroDirection(_inputs.Direction.Vector));
+        if (GameManager.Instance.IsState("Game"))
+        {
+            _inputs = Controls.Instance.GetPlayer(playerNumber);
+            _hero.Move(InputToHeroDirection(_inputs.Direction.Vector));
+        }
     }
 
     private Vector2 InputToHeroDirection(Vector2 direction)

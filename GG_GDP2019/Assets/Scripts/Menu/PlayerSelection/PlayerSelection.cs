@@ -9,11 +9,23 @@ public class PlayerSelection : MonoBehaviour
     public int Number = 0;
     public int SelectedObject = 0;
 
+    public bool present;
+    public bool pret;
+
     public WeaponDisplay WeaponDisplay;
     public PersoDisplay PersoDisplay;
 
     [SerializeField]
     public Image[] ImagesAColorer;
+
+    [SerializeField]
+    public GameObject[] ImagesACacherSiJoueurNonPresent;
+    
+    [SerializeField]
+    public GameObject[] ImagesACacherSiJoueurPresent;
+
+    [SerializeField]
+    public GameObject[] ImagesACacherSiJoueurPret;
 
     //delegate
     public delegate void OnTryLaunchGame();
@@ -23,7 +35,7 @@ public class PlayerSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     public void PersoSuivant()
@@ -43,6 +55,31 @@ public class PlayerSelection : MonoBehaviour
         foreach (Image img in ImagesAColorer)
         {
             img.color = CommonProperties.Instance._colors[Number];
+        }
+        if (present)
+        {
+            foreach (GameObject go in ImagesACacherSiJoueurNonPresent)
+            {
+                go.SetActive(true);
+            }
+            foreach (GameObject go in ImagesACacherSiJoueurPresent)
+            {
+                go.SetActive(false);
+            }
+        }
+        else
+        {
+            foreach (GameObject go in ImagesACacherSiJoueurNonPresent)
+            {Debug.Log(ImagesACacherSiJoueurNonPresent.Length);
+                go.SetActive(false);
+            }
+        }
+        if (pret)
+        {
+            foreach (GameObject go in ImagesACacherSiJoueurPret)
+            {
+                go.gameObject.SetActive(false);
+            }
         }
     }
 

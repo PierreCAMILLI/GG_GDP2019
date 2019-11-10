@@ -70,6 +70,7 @@ public class PlayersSelectionManager : MonoBehaviour
                     if (inputDevice.Action1.WasPressed && !PlayersHere[i])
                     {
                         Debug.Log("Player Here !!");
+                        playersSelection[i].present = true;
                         PlayersHere[i] = true;
                     }
                     else if (PlayersHere[i])
@@ -79,7 +80,7 @@ public class PlayersSelectionManager : MonoBehaviour
                             Debug.Log("Player Ready !!");
                             PlayersReady[i] = true;
                             numberOfPlayersReady++;
-
+                            playersSelection[i].pret = true;
                             playersSelection[i].GetComponent<Animator>().SetBool("Ready", true);
 
                         }
