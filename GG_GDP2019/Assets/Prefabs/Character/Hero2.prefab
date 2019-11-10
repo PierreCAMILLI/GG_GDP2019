@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 5801752118003054768}
   - component: {fileID: 629234267}
   - component: {fileID: 2789315751250746602}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hero2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5801752118003054771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.887, y: 1.111, z: 0.27624893}
+  m_LocalPosition: {x: -0.76, y: 1.111, z: 0.27624893}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1222465821375556662}
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 3799182509563579744}
-  _speed: 5
+  _speed: 8
   _rotationSpeed: 10
   _magnitudeSpeed: 0
   _usedWeapon: 1
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549a5eb868d6eee459ddb23015652847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerNumber: 0
+  _playerNumber: 1
 --- !u!54 &629234267
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -191,13 +191,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5801752118003054771}
   serializedVersion: 2
-  m_Mass: 1000
-  m_Drag: 0
+  m_Mass: 65
+  m_Drag: 20
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 1
 --- !u!65 &2789315751250746602
 BoxCollider:
@@ -211,7 +211,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.12, y: 0, z: 0}
 --- !u!1 &7897401602830702289
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 1222465821375556662}
   - component: {fileID: 3260385801953036660}
   - component: {fileID: 9002035202398826533}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7897401602830702289}
   m_LocalRotation: {x: -0, y: -0, z: 5.77663e-16, w: 1}
-  m_LocalPosition: {x: 0, y: -0.39, z: 0}
+  m_LocalPosition: {x: 0.1, y: -0.44, z: 0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5801752118003054762}
@@ -258,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numSegments: 128
   color: {r: 1, g: 1, b: 1, a: 0}
+  width: 0.05
 --- !u!120 &9002035202398826533
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -452,6 +453,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cone
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8195825ad2bac41f59bf79c83fb61622,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8195825ad2bac41f59bf79c83fb61622, type: 3}
 --- !u!1 &2622960449238587678 stripped
@@ -467,6 +473,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5801752118003054762}
     m_Modifications:
+    - target: {fileID: -5320826365532093249, guid: 0c2705b0518f047ed824615ded9c6718,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0c2705b0518f047ed824615ded9c6718,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -541,6 +552,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: perso2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0c2705b0518f047ed824615ded9c6718,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3864034744175672748, guid: 0c2705b0518f047ed824615ded9c6718,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3922853251354938181, guid: 0c2705b0518f047ed824615ded9c6718,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958760312158883434, guid: 0c2705b0518f047ed824615ded9c6718,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321658321983258933, guid: 0c2705b0518f047ed824615ded9c6718,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c2705b0518f047ed824615ded9c6718, type: 3}
