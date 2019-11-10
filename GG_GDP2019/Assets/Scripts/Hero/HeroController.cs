@@ -32,6 +32,18 @@ public class HeroController : MonoBehaviour
             {
                 _hero.UseWeapon(AbstractWeapon.UseState.Up);
             }
+            if (_inputs.CommandWasPressed)
+            {
+                GameManager.Instance.Pause();
+            }
+        }
+
+        if (GameManager.Instance.IsState("Pause"))
+        {
+            if (_inputs.CommandWasPressed)
+            {
+                GameManager.Instance.Resume();
+            }
         }
     }
 

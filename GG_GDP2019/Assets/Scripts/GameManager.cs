@@ -68,10 +68,12 @@ public class GameManager : SingletonBehaviour<GameManager>
         animator.SetTrigger("newGame"); 
     }
     public void Pause() {
-        animator.SetTrigger("pause"); 
+        animator.SetTrigger("pause");
+        Time.timeScale = 0f;
     }
     public void Resume() {
-        animator.SetTrigger("resume"); 
+        animator.SetTrigger("resume");
+        Time.timeScale = 1f;
     }
 
     public void StartGame()
