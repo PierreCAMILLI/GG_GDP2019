@@ -1,6 +1,7 @@
 ﻿using InControl;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +19,12 @@ public class GameManager : SingletonBehaviour<GameManager>
         get => baseTimer;
     }
 
+    private float _greaterDetectionRate;
+    public float GreaterDetectionRate
+    {
+        get { return _greaterDetectionRate; }
+    }
+
     override protected void Awake()
     {
         base.Awake();
@@ -33,7 +40,15 @@ public class GameManager : SingletonBehaviour<GameManager>
     // Update is called once per frame
     void Update()
     {
+        UpdateGreaterDetectionRate();
+    }
 
+    void UpdateGreaterDetectionRate()
+    {
+        if (Spotlight.Spotlights != null && Spotlight.Spotlights.Count > 0)
+        {
+            _greaterDetectionRate = Spotlight.Spotlights.Where(s => s.isActiveAndEnabled).Max(s => s.DetectionRate);
+        }
     }
 
     public void GameOver() {
@@ -58,6 +73,11 @@ public class GameManager : SingletonBehaviour<GameManager>
     public void StartGame()
     {
         animator.SetTrigger("StartGame");
+    }
+
+    public bool IsState(string name)
+    {
+        return animator.GetCurrentAnimatorStateInfo(0).IsName(name);
     }
 
 }
