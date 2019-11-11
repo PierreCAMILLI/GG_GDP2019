@@ -48,7 +48,8 @@ public class Spotlight : MonoBehaviour
         }
         else
         {
-            timeDetectingWaste -= timeDetectingWaste/100;
+            timeDetectingWaste -= Time.deltaTime * thresholdTime;
+            timeDetectingWaste = Mathf.Max(0, timeDetectingWaste);
         }
 
         if (timeDetectingWaste > thresholdTime)

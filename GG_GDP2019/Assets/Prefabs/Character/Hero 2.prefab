@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 8292393518502234031}
+  lockDirection: 0
   _speed: 8
   _rotationSpeed: 10
   _magnitudeSpeed: 0
@@ -909,7 +910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aadbe0f65096df648948950002afdb24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForceConstant: 50
+  ForceConstant: 100
 --- !u!1 &5164810347048333914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,8 +1015,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8124305377406814389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0017}
+  m_LocalScale: {x: 1, y: 1, z: 2.0131}
   m_Children:
   - {fileID: 449493961461202376}
   - {fileID: 5164810346920700412}
