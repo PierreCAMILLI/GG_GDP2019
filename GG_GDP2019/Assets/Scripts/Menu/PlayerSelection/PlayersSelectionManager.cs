@@ -29,7 +29,7 @@ public class PlayersSelectionManager : MonoBehaviour
 
     [SerializeField]
     public PlayerSelection[] playersSelec;
- 
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,7 @@ public class PlayersSelectionManager : MonoBehaviour
         numberOfPlayersReady = 0;
         numberOfPlayersConnected = 0;
 
-        SpaceBetweenTwoPanels = (Screen.width - posXInitial/2) / 4;
+        SpaceBetweenTwoPanels = (Screen.width - posXInitial / 2) / 4;
         posXInitial = Screen.width / 8;
         posYInitial = Screen.height / 3;
 
@@ -60,6 +60,21 @@ public class PlayersSelectionManager : MonoBehaviour
             playersSelec[i].GetComponent<Image>().color = CommonProperties.Instance._colors[i];
         }
         PlayerSelection.tryLaunch += TestLaunchGame;
+    }
+
+    public void resetSelection()
+    {
+        numberOfPlayersReady = 0;
+        numberOfPlayersConnected = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            PlayersHere[i] = false;
+            PlayersReady[i] = false;
+            playersSelection[i].pret = false;
+            playersSelection[i].present = false;
+            playersSelection[i].GetComponent<Animator>().SetBool("Ready", false);
+            playersSelection[i].imgPret.color = Color.clear;
+        }
     }
 
     void OnDisable()
@@ -135,7 +150,7 @@ public class PlayersSelectionManager : MonoBehaviour
 
             for (int i = 0; i < playersSelection.Length; i++)
             {
-                if(playersSelection[i].present)
+                if (playersSelection[i].present)
                     playerSel[playersSelection[i].Number] = playersSelection[i].WeaponDisplay.SelectedImage;
             }
             GameManager.Instance.playerSelection = playerSel;

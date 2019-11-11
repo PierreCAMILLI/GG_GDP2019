@@ -84,7 +84,23 @@ public class MenuManager : MonoBehaviour
                 SurQuelBouton = SUR_START;
             }
         }
-        if (SurQuelBouton == SUR_START)
+        else if (SceneName == SELECT_SCENE)
+        {
+            inputDevice = InputManager.ActiveDevice;
+            if (inputDevice.Action2.WasPressed)
+            {
+                BlocCredits.SetActive(false);
+                BlocSelection.SetActive(false);
+                BlocStart.SetActive(true);
+                playerSelectionManager.setSceneName(START_SCENE);
+                playerSelectionManager.resetSelection();
+                SceneName = START_SCENE;
+                SurQuelBouton = SUR_START;
+                creditsTexte.GetComponent<Animator>().SetBool("selected", false);
+                startTexte.GetComponent<Animator>().SetBool("selected", true);
+            }
+        }
+            if (SurQuelBouton == SUR_START)
         {
             creditsTexte.GetComponent<Animator>().SetBool("selected", false);
             startTexte.GetComponent<Animator>().SetBool("selected", true);

@@ -1021,6 +1021,7 @@ MonoBehaviour:
   ImagesACacherSiJoueurPret:
   - {fileID: 8133416856075049307}
   - {fileID: 1821937851510899465}
+  imgPret: {fileID: 1084908951883637361}
 --- !u!95 &2907100357321455184
 Animator:
   serializedVersion: 3
