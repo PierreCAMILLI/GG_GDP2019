@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberDetectedWaste: 0
   timeDetectingWaste: 0
-  thresholdTime: 100
+  thresholdTime: 170
 --- !u!1 &7637924380310456076
 GameObject:
   m_ObjectHideFlags: 0
