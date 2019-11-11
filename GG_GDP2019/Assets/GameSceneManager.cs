@@ -28,10 +28,7 @@ public class GameSceneManager : MonoBehaviour
 
     private void CreateHero(int playSel, int playNum)
     {
-        GameObject hero = Instantiate(heroModels[playSel]);
-        hero.transform.parent = heroes;
-        hero.transform.position = baseHeroesPositions[playNum].position;
-        hero.transform.rotation = baseHeroesPositions[playNum].rotation;
+        GameObject hero = Instantiate(heroModels[playSel], baseHeroesPositions[playNum].position, baseHeroesPositions[playNum].rotation, heroes);
         HeroController heroController = hero.GetComponent<HeroController>();
         heroController.playerNumber = playNum;
         hero.transform.Find("Circle").GetComponent<Circle_chara>().color = CommonProperties.Instance._colors[playNum];

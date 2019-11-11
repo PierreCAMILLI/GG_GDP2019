@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class VacuumSound : MonoBehaviour
 {
-    public AudioSource mySound;
+    public AudioClip Sound;
+    public AudioSource source;
     public bool VacuumUsed;
 
     // Start is called before the first frame update
@@ -12,19 +13,20 @@ public class VacuumSound : MonoBehaviour
     {
         VacuumUsed = false;
     }
+    public void PlaySound()
+    {
+        source.clip = Sound;
+        source.Play();
+        source.loop = true;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (VacuumUsed)
+        if (!VacuumUsed)
         {
-            mySound.enabled = true;
-            mySound.loop = true;
-        }
-        else
-        {
-            mySound.enabled = false;
-            mySound.loop = false;
+            source.Stop();
+            source.loop = false;
         }
     }
 }

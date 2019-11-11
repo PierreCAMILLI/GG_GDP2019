@@ -653,7 +653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b782e5e905c596c4687505afc4721392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mySound: {fileID: 6790294558284060019}
+  Sound: {fileID: 8300000, guid: 99a28d02c25ca12478ed332ca22d9826, type: 3}
+  source: {fileID: 6790294558284060019}
   VacuumUsed: 0
 --- !u!33 &5164810346691605375
 MeshFilter:
@@ -713,7 +714,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1af94240828b74942a43a50c8f0d8438, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 99a28d02c25ca12478ed332ca22d9826, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
