@@ -5,25 +5,25 @@ using UnityEngine;
 public class SpotlightPositionController : MonoBehaviour
 {
     [SerializeField]
-    private Transform[] positions;
+    public Transform[] positions;
     
     private Transform targetPosition;
 
     [SerializeField]
-    private Spotlight spotlight;
+    public Spotlight spotlight;
 
     [SerializeField]
-    private float speed;
+    public float speed;
 
     [SerializeField]
-    private float beginTime;
+    public float beginTime;
     private bool began;
     // Start is called before the first frame update
     void Start()
     {
         
         began = false;
-        targetPosition = positions[0];
+        NewPosition();
         Invoke("Begin", beginTime);
     }
 

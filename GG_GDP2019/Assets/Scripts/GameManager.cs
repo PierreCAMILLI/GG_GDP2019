@@ -24,6 +24,8 @@ public class GameManager : SingletonBehaviour<GameManager>
     }
 
     private float _greaterDetectionRate;
+
+    public float difficulty;
     public float GreaterDetectionRate
     {
         get { return _greaterDetectionRate; }
@@ -64,8 +66,20 @@ public class GameManager : SingletonBehaviour<GameManager>
         animator.SetTrigger("quit"); 
     }
     public void NewGame() {
+        animator.ResetTrigger("nextLevelLoading");
         animator.ResetTrigger("gameOver");
         animator.SetTrigger("newGame"); 
+    }
+    public void NextLevelLoading() {
+        if (IsState("Game"))
+        {
+            animator.ResetTrigger("gameOver");
+            animator.SetTrigger("nextLevelLoading");
+        }
+    }
+    public void NextLevelLoaded() {
+        animator.ResetTrigger("nextLevelLoading");
+        animator.SetTrigger("levelLoaded"); 
     }
     public void Pause() {
         animator.SetTrigger("pause");

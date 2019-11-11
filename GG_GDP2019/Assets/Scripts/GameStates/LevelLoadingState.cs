@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameState : StateMachineBehaviour
+public class LevelLoadingState : StateMachineBehaviour
 {
 
-    public bool gameOver;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -15,15 +14,8 @@ public class GameState : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (GameManager.Instance.IsState("Game"))
-        {
-            GameManager.Instance.timer -= Time.deltaTime;
-
-            if (GameManager.Instance.timer <= 0f)
-            {
-                GameManager.Instance.NextLevelLoading();
-            }
-        }
+        if(GameManager.Instance.IsState("LevelLoading"))
+            GameManager.Instance.NextLevelLoaded();
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
