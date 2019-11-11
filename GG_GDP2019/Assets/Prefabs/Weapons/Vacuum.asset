@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Vacuum
   m_EditorClassIdentifier: 
   _type: 1
-  _power: 5
+  _power: 50
