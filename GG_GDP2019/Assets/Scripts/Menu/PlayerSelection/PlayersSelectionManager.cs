@@ -26,9 +26,12 @@ public class PlayersSelectionManager : MonoBehaviour
     private const int START_SCENE = 0;
     private const int SELECT_SCENE = 1;
     private const int CREDITS_SCENE = 2;
+    private const int INSTRUCTIONS_SCENE = 3;
 
     [SerializeField]
     public PlayerSelection[] playersSelec;
+
+    public MenuManager menuManager;
 
 
     // Start is called before the first frame update
@@ -44,16 +47,7 @@ public class PlayersSelectionManager : MonoBehaviour
         posYInitial = Screen.height / 3;
 
         playersSelection = new PlayerSelection[4];
-        /*for (int i = 0; i < 4; i++)
-        {
-            playersSelec[i]= GetComponent<PlayerSelection>();
-            playersSelection[i] = playersSelec[i];
 
-            playersSelec[i].transform.SetPositionAndRotation(new Vector3(posXInitial + i * SpaceBetweenTwoPanels, posYInitial, 0), Quaternion.identity);
-            playersSelec[i].GetComponent<Image>().color = CommonProperties.Instance._colors[i];
-
-            //playerSelec.gameObject.SetActive(false);
-        }*/
         playersSelection = playersSelec;
         for (int i = 0; i < 4; i++)
         {
@@ -154,7 +148,7 @@ public class PlayersSelectionManager : MonoBehaviour
                     playerSel[playersSelection[i].Number] = playersSelection[i].WeaponDisplay.SelectedImage;
             }
             GameManager.Instance.playerSelection = playerSel;
-            GameManager.Instance.NewGame();
+            menuManager.launching();
         }
     }
 }
