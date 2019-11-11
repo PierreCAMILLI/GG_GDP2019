@@ -26,6 +26,8 @@ public class GameManager : SingletonBehaviour<GameManager>
     private float _greaterDetectionRate;
 
     public float difficulty;
+    public int level;
+
     public float GreaterDetectionRate
     {
         get { return _greaterDetectionRate; }
