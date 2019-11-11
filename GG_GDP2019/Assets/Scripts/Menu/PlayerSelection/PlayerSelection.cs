@@ -27,6 +27,8 @@ public class PlayerSelection : MonoBehaviour
     [SerializeField]
     public GameObject[] ImagesACacherSiJoueurPret;
 
+    public Image imgPret;
+
     //delegate
     public delegate void OnTryLaunchGame();
     //event  

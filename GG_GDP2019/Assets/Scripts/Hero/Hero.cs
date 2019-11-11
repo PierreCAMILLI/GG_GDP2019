@@ -11,6 +11,9 @@ public class Hero : MonoBehaviour
     private Rigidbody _rigidbody;
     [SerializeField]
     Animator m_Animator;
+
+    public bool lockDirection;
+
     public Animator Animator
     {
         get { return m_Animator; }
@@ -95,7 +98,7 @@ public class Hero : MonoBehaviour
             // _rigidbody.MovePosition(transform.position + direction * Time.fixedDeltaTime);
             _rigidbody.AddForce(direction, ForceMode.VelocityChange);
         }
-        if (direction.sqrMagnitude > 0.1f)
+        if (direction.sqrMagnitude > 0.1f && !lockDirection)
         {
             Vector3 forwardTarget = Vector3.RotateTowards(transform.forward, direction, _rotationSpeed * Time.fixedDeltaTime, _magnitudeSpeed * Time.fixedDeltaTime);
             transform.forward = forwardTarget;
