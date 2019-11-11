@@ -28,7 +28,6 @@ public class VacuumCone : MonoBehaviour
             Vector3 direction = (transform_hero.position - other.transform.position);
             float distance = direction.magnitude;
             Vector3 force = ForceConstant * direction.normalized;
-            //Vector3 force = 500 * direction.normalized;
             rigidbody.AddForce(force, ForceMode.Force);
             
 
