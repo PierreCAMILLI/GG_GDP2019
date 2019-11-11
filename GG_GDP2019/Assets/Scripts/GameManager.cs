@@ -44,6 +44,7 @@ public class GameManager : SingletonBehaviour<GameManager>
     // Update is called once per frame
     void Update()
     {
+
         UpdateGreaterDetectionRate();
     }
 
