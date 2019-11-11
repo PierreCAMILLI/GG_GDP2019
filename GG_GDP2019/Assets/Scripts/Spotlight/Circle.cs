@@ -10,6 +10,9 @@ public class Circle : MonoBehaviour
 
     private Spotlight spotlight;
 
+    [SerializeField]
+    private float width;
+
     void Start()
     {
         newCollider = GetComponentInParent<CapsuleCollider>();
@@ -24,7 +27,7 @@ public class Circle : MonoBehaviour
         Color color = Color.Lerp(Color.white, Color.red, spotlight.timeDetectingWaste / spotlight.thresholdTime);
        
         lineRenderer.SetColors(color, color);
-        lineRenderer.SetWidth(0.2f, 0.2f);
+        lineRenderer.SetWidth(width, width);
         lineRenderer.SetVertexCount(numSegments + 1);
         lineRenderer.useWorldSpace = false;
 

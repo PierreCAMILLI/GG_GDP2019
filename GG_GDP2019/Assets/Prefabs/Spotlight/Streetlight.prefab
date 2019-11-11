@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numSegments: 112
+  width: 0.2
 --- !u!120 &8577118207495643029
 LineRenderer:
   m_ObjectHideFlags: 0
