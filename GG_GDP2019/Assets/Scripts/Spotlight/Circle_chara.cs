@@ -11,6 +11,8 @@ public class Circle_chara : MonoBehaviour
     [SerializeField]
     private float width;
 
+    [SerializeField]
+    private float radiusFactor;
     void Start()
     {
         newCollider = GetComponentInParent<CharacterController>();
@@ -27,7 +29,7 @@ public class Circle_chara : MonoBehaviour
         float deltaTheta = (float)(2.0 * Mathf.PI) / numSegments;
         float theta = 0f;
 
-        float radius = 1.2f * newCollider.radius;
+        float radius = radiusFactor * newCollider.radius;
 
         for (int i = 0; i < numSegments + 1; i++)
         {

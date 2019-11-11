@@ -213,7 +213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numSegments: 128
   color: {r: 1, g: 1, b: 1, a: 0}
-  width: 0.05
+  width: 0.2
+  radiusFactor: 1.5
 --- !u!120 &4269607021817559786
 LineRenderer:
   m_ObjectHideFlags: 0
