@@ -27,10 +27,14 @@ public class HeroController : MonoBehaviour
             if (_inputs.Action1.WasPressed)
             {
                 _hero.UseWeapon(AbstractWeapon.UseState.Down);
+                if(_hero.UsedWeapon == AbstractWeapon.TypeEnum.Vacuum)
+                    _hero.lockDirection = true;
             }
             if (_inputs.Action1.WasReleased)
             {
                 _hero.UseWeapon(AbstractWeapon.UseState.Up);
+                if (_hero.UsedWeapon == AbstractWeapon.TypeEnum.Vacuum)
+                    _hero.lockDirection = false;
             }
             if (_inputs.CommandWasPressed)
             {
