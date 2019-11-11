@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 21448596}
   _blinkingFrequency: 3
+  source: {fileID: 0}
 --- !u!114 &758368655
 MonoBehaviour:
   m_ObjectHideFlags: 0
