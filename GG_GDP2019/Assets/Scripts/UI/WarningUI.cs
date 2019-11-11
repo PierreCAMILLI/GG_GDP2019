@@ -10,6 +10,9 @@ public class WarningUI : MonoBehaviour
 
     [SerializeField]
     private float _blinkingFrequency;
+
+    [SerializeField]
+    private AudioSource source;
     public float Frequency
     {
         get { return _blinkingFrequency; }
@@ -32,6 +35,11 @@ public class WarningUI : MonoBehaviour
         {
             float time = 1f / _blinkingFrequency;
             float t = Mathf.Repeat(Time.time, time * 2f);
+            bool changeActive = t < time != _image.gameObject.activeInHierarchy && t < time ;
+            if (changeActive)
+            {
+                source.Play();
+            }
             _image.gameObject.SetActive(t < time);
         }
     }
