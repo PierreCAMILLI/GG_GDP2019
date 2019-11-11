@@ -22,6 +22,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         _direction = transform.forward;
+        Camera.main.orthographicSize = 10f;
     }
 
     // Update is called once per frame
