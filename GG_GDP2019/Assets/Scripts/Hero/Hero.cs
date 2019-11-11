@@ -11,6 +11,9 @@ public class Hero : MonoBehaviour
     private Rigidbody _rigidbody;
     [SerializeField]
     Animator m_Animator;
+
+    public bool lockDirection;
+
     public Animator Animator
     {
         get { return m_Animator; }
