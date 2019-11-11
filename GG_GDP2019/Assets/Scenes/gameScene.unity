@@ -931,6 +931,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666479461}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &729942711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 456650740517906967, guid: fa5c1e3fc2d66b44eae2c7d297569bd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1119063665}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &745413978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 758368652, guid: fa5c1e3fc2d66b44eae2c7d297569bd4,
@@ -3009,6 +3015,26 @@ PrefabInstance:
     - target: {fileID: 758368655, guid: fa5c1e3fc2d66b44eae2c7d297569bd4, type: 3}
       propertyPath: _values.Array.data[3].rate
       value: 0.696
+      objectReference: {fileID: 0}
+    - target: {fileID: 456650740517906967, guid: fa5c1e3fc2d66b44eae2c7d297569bd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287938433407897494, guid: fa5c1e3fc2d66b44eae2c7d297569bd4,
+        type: 3}
+      propertyPath: grayScreen
+      value: 
+      objectReference: {fileID: 729942711}
+    - target: {fileID: 4529407876228490626, guid: fa5c1e3fc2d66b44eae2c7d297569bd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118416612174053303, guid: fa5c1e3fc2d66b44eae2c7d297569bd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6584502106426739793, guid: fa5c1e3fc2d66b44eae2c7d297569bd4,
         type: 3}

@@ -10,12 +10,16 @@ public class GameOverUIScript : MonoBehaviour
     [SerializeField]
     private GameObject gameOverText;
 
+    [SerializeField]
+    private GameObject grayScreen;
+
     private bool hasOver;
     // Start is called before the first frame update
     void Start()
     {
         scoreText.SetActive(false); 
         gameOverText.SetActive(false);
+        grayScreen.SetActive(false);
         hasOver = false;
     }
     public void GameOver()
@@ -24,6 +28,7 @@ public class GameOverUIScript : MonoBehaviour
         scoreText.GetComponent<Text>().text = "Vous avez atteint le level " + GameManager.Instance.level;
         scoreText.SetActive(true);
         gameOverText.SetActive(true);
+        grayScreen.SetActive(true);
         GameManager.Instance.level = 0;
         GameManager.Instance.difficulty = 0;
 

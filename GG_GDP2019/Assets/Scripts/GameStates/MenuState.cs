@@ -10,6 +10,9 @@ public class MenuState : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         SceneManager.LoadScene("Scenes/menuScene");
+        GameManager.Instance.difficulty = 0f;
+        GameManager.Instance.level = 1;
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
