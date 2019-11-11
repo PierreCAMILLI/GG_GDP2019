@@ -48,7 +48,7 @@ public class Spotlight : MonoBehaviour
         }
         else
         {
-            timeDetectingWaste = 0;
+            timeDetectingWaste -= timeDetectingWaste/100;
         }
 
         if (timeDetectingWaste > thresholdTime)
