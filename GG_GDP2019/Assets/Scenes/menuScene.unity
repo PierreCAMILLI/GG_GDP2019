@@ -3148,6 +3148,11 @@ PrefabInstance:
       propertyPath: baseTimer
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5094012870762123743, guid: f276fc9cfecc1784a8b7ef926f3e2dec,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.729
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f276fc9cfecc1784a8b7ef926f3e2dec, type: 3}
 --- !u!1001 &9197395535011189613

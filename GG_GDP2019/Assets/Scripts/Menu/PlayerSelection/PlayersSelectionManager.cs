@@ -127,7 +127,7 @@ public class PlayersSelectionManager : MonoBehaviour
                             else if (inputDevice.Direction.WasPressed && inputDevice.Direction.X > 0)
                             {
                                 playersSelection[i].PersoSuivant();
-                                if (playersSelection[i].WeaponDisplay.Number == 0)
+                                if (playersSelection[i].WeaponDisplay.SelectedImage == 0)
                                 {
                                     audioSource.clip = broom_on;
                                     
@@ -139,7 +139,7 @@ public class PlayersSelectionManager : MonoBehaviour
                             else if (inputDevice.Direction.WasPressed && inputDevice.Direction.X < 0)
                             {
                                 playersSelection[i].PersoPrecedent();
-                                if (playersSelection[i].WeaponDisplay.Number == 0)
+                                if (playersSelection[i].WeaponDisplay.SelectedImage == 0)
                                 {
                                     audioSource.clip = broom_on;
 
