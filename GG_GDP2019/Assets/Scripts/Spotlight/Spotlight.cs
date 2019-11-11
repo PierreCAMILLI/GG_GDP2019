@@ -4,9 +4,34 @@ using UnityEngine;
 
 public class Spotlight : MonoBehaviour
 {
+    private static List<Spotlight> _spotlights;
+    public static IList<Spotlight> Spotlights
+    {
+        get { return _spotlights; }
+    }
+
     public int numberDetectedWaste = 0;
     public float timeDetectingWaste = 0.0f;
     public float thresholdTime = 1000.0f;
+
+    public float DetectionRate
+    {
+        get { return timeDetectingWaste / thresholdTime; }
+    }
+
+    private void Awake()
+    {
+        if (_spotlights == null)
+        {
+            _spotlights = new List<Spotlight>();
+        }
+        _spotlights.Add(this);
+    }
+
+    private void OnDestroy()
+    {
+        _spotlights.Remove(this);
+    }
 
     // Start is called before the first frame update
     void Start()

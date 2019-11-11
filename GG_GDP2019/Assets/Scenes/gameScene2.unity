@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &43447384 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6790294558284060019, guid: 436d75ae580280e4aa323eea926eddf9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5164810347120339435}
+  m_PrefabAsset: {fileID: 0}
 --- !u!136 &84887342 stripped
 CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 859423010032570973, guid: 58651aef6419b934286ef7f581f36531,
@@ -2174,7 +2180,6 @@ MonoBehaviour:
     restrict: 0
   _zoomLimiter: 50
   distance: 20
-  constanteMagique: 0.57
 --- !u!1 &1338192796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,13 +2772,14 @@ MonoBehaviour:
   - {fileID: 84887342}
   - {fileID: 196861687}
   - {fileID: 1841107908}
+  obstacles: {fileID: 0}
 --- !u!43 &1739573606
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh40388
+  m_Name: pb_Mesh52890
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3193,6 +3199,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1918675408 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1605710949, guid: d9df8be63b5496642a98b95e32b95c0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1639878207375879844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2061132087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3439,11 +3451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b51b6fd813a3d9429c672b85c585ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heros:
-  - {fileID: 7228827472348697402}
-  - {fileID: 5801752117581863822}
-  - {fileID: 1374914832}
-  - {fileID: 453648919}
 --- !u!4 &2111560761
 Transform:
   m_ObjectHideFlags: 0
@@ -3469,6 +3476,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2111560761}
     m_Modifications:
+    - target: {fileID: 1605710949, guid: d9df8be63b5496642a98b95e32b95c0d, type: 3}
+      propertyPath: m_Volume
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955223915443963239, guid: d9df8be63b5496642a98b95e32b95c0d,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1af94240828b74942a43a50c8f0d8438, type: 3}
+    - target: {fileID: 3955223915443963239, guid: d9df8be63b5496642a98b95e32b95c0d,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1918675408}
     - target: {fileID: 8256207265269742983, guid: d9df8be63b5496642a98b95e32b95c0d,
         type: 3}
       propertyPath: m_Name
@@ -3604,6 +3625,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2852510669835019111, guid: 436d75ae580280e4aa323eea926eddf9,
+        type: 3}
+      propertyPath: VacuumUsed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2852510669835019111, guid: 436d75ae580280e4aa323eea926eddf9,
+        type: 3}
+      propertyPath: Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 99a28d02c25ca12478ed332ca22d9826, type: 3}
+    - target: {fileID: 2852510669835019111, guid: 436d75ae580280e4aa323eea926eddf9,
+        type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 43447384}
+    - target: {fileID: 6790294558284060019, guid: 436d75ae580280e4aa323eea926eddf9,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 99a28d02c25ca12478ed332ca22d9826, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 436d75ae580280e4aa323eea926eddf9, type: 3}
 --- !u!1001 &5640868333034594399

@@ -8,6 +8,10 @@ using InControl;
 public class Controls : SingletonBehaviour<Controls>
 {
     public List<InputDevice> GamePads;
+    public int PlayerCount
+    {
+        get { return GamePads.Count; }
+    }
 
     void Start()
     {

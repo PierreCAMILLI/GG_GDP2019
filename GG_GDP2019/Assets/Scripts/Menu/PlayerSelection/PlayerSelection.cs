@@ -70,7 +70,8 @@ public class PlayerSelection : MonoBehaviour
         else
         {
             foreach (GameObject go in ImagesACacherSiJoueurNonPresent)
-            {Debug.Log(ImagesACacherSiJoueurNonPresent.Length);
+            {
+                //Debug.Log(ImagesACacherSiJoueurNonPresent.Length);
                 go.SetActive(false);
             }
         }
