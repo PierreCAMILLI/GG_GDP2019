@@ -34,10 +34,8 @@ public class GameManager : SingletonBehaviour<GameManager>
     // Update is called once per frame
     void Update()
     {
-        //Input update
-        
 
-        }
+    }
     public void GameOver() {
         if(animator.GetCurrentAnimatorStateInfo(0).IsName("Game"))
             animator.SetTrigger("gameOver");
