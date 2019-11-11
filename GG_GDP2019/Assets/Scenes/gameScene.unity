@@ -835,7 +835,7 @@ MonoBehaviour:
   spotlightPrefabs:
   - {fileID: 2077450782519895584, guid: 58651aef6419b934286ef7f581f36531, type: 3}
   minSpotDifficulty: 150
-  difficultyToSpeed: 0.02
+  difficultyToSpeed: 0.015
   speedDiffThreshold: 50
   meanDifficultyToSpot: 250
 --- !u!1001 &752813073
@@ -2899,11 +2899,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4996650859940232103, guid: f276fc9cfecc1784a8b7ef926f3e2dec,
-        type: 3}
-      propertyPath: baseTimer
-      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f276fc9cfecc1784a8b7ef926f3e2dec, type: 3}
