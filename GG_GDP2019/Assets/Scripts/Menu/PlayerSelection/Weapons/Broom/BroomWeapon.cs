@@ -10,18 +10,25 @@ public class BroomWeapon : AbstractWeapon
 
     [SerializeField]
     private Vector3 broomPosition;
-    
 
     private GameObject broomInstance;
+
+    private BoxCollider broomCollider;
     public override void OnAwake(Hero hero) {
     }
     public override void OnUseDown(Hero hero)
     {
         hero.Animator.SetBool("BroomDown", true);
+        broomInstance = hero.transform.Find("Broom").gameObject;
+        broomCollider = broomInstance.GetComponentInChildren<BoxCollider>();
+        broomCollider.gameObject.SetActive(true);
     }
 
     public override void OnUseUp(Hero hero)
     {
         hero.Animator.SetBool("BroomDown", false);
+        broomInstance = hero.transform.Find("Broom").gameObject;
+        broomCollider = broomInstance.GetComponentInChildren<BoxCollider>();
+        broomCollider.gameObject.SetActive(false);
     }
 }
