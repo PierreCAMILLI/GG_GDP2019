@@ -1008,10 +1008,10 @@ MonoBehaviour:
   - {fileID: 1404196339}
   spotlightPrefabs:
   - {fileID: 2077450782519895584, guid: 58651aef6419b934286ef7f581f36531, type: 3}
-  minSpotDifficulty: 150
+  minSpotDifficulty: 20
   difficultyToSpeed: 0.015
   speedDiffThreshold: 50
-  meanDifficultyToSpot: 250
+  meanDifficultyToSpot: 50
 --- !u!1001 &752813073
 PrefabInstance:
   m_ObjectHideFlags: 0
