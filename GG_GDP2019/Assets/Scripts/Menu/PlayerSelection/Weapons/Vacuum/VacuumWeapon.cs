@@ -7,7 +7,7 @@ public class VacuumWeapon : AbstractWeapon
 {
 
     [SerializeField]
-    private float _power = 5f;
+    private float _power = 50f;
 
 
     // Start is called before the first frame update
