@@ -7,9 +7,12 @@ public class LevelGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        GameManager.Instance.difficulty += 300f;
+        float difficultyPerGenerator = GameManager.Instance.difficulty / transform.childCount;
         foreach (Transform child in transform)
         {
-            child.GetComponent<Generator>().Generate(1000f);
+            child.GetComponent<Generator>().Generate(difficultyPerGenerator);
         }
     }
 

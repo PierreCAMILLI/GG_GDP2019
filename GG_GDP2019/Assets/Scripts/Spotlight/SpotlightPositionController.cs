@@ -47,7 +47,7 @@ public class SpotlightPositionController : MonoBehaviour
         }
     }
 
-    void NewPosition()
+    public void NewPosition()
     {
         targetPosition = positions[Random.Range(0, positions.Length)];
 
