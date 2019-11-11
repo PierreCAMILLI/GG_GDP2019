@@ -33,6 +33,12 @@ public class PlayersSelectionManager : MonoBehaviour
 
     public MenuManager menuManager;
 
+    [SerializeField]
+    private AudioClip broom_on;
+    [SerializeField]
+    private AudioClip vacuum_on;
+    [SerializeField]
+    private AudioClip ready;
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +102,9 @@ public class PlayersSelectionManager : MonoBehaviour
                     if (i < numberOfPlayersConnected)
                     {
                         InputDevice inputDevice = Controls.Instance.GetPlayer(i);
+
+                        AudioSource audioSource = playersSelection[i].GetComponent<AudioSource>();
+
                         if (inputDevice.Action1.WasPressed && !PlayersHere[i])
                         {
                             Debug.Log("Player Here !!");
@@ -111,15 +120,33 @@ public class PlayersSelectionManager : MonoBehaviour
                                 numberOfPlayersReady++;
                                 playersSelection[i].pret = true;
                                 playersSelection[i].GetComponent<Animator>().SetBool("Ready", true);
+                                audioSource.clip = ready;
+                                audioSource.Play();
 
                             }
                             else if (inputDevice.Direction.WasPressed && inputDevice.Direction.X > 0)
                             {
                                 playersSelection[i].PersoSuivant();
+                                if (playersSelection[i].WeaponDisplay.Number == 0)
+                                {
+                                    audioSource.clip = broom_on;
+                                    
+                                }
+                                else
+                                    audioSource.clip = vacuum_on;
+                                audioSource.Play();
                             }
                             else if (inputDevice.Direction.WasPressed && inputDevice.Direction.X < 0)
                             {
                                 playersSelection[i].PersoPrecedent();
+                                if (playersSelection[i].WeaponDisplay.Number == 0)
+                                {
+                                    audioSource.clip = broom_on;
+
+                                }
+                                else
+                                    audioSource.clip = vacuum_on;
+                                audioSource.Play();
                             }
                         }
                     }
