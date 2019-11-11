@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using InControl;
+using System;
 
 public class MenuManager : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class MenuManager : MonoBehaviour
     private const int START_SCENE = 0;
     private const int SELECT_SCENE = 1;
     private const int CREDITS_SCENE = 2;
+    private const int INSTRUCTIONS_SCENE = 3;
     public GameObject BlocSelection;
     public GameObject BlocStart;
     public GameObject BlocCredits;
+    public GameObject BlocInstructions;
     private InputDevice inputDevice;
     public boutonSelect startTexte;
     public boutonSelect creditsTexte;
@@ -28,6 +31,7 @@ public class MenuManager : MonoBehaviour
         SceneName = START_SCENE;
         BlocSelection.SetActive(false);
         BlocCredits.SetActive(false);
+        BlocInstructions.SetActive(false);
         SurQuelBouton = SUR_START;
     }
 
@@ -100,10 +104,26 @@ public class MenuManager : MonoBehaviour
                 startTexte.GetComponent<Animator>().SetBool("selected", true);
             }
         }
-            if (SurQuelBouton == SUR_START)
+        else if (SceneName == INSTRUCTIONS_SCENE)
+        {
+            BlocSelection.SetActive(false);
+            BlocInstructions.SetActive(true);
+            playerSelectionManager.setSceneName(INSTRUCTIONS_SCENE);
+        }
+        if (SurQuelBouton == SUR_START)
         {
             creditsTexte.GetComponent<Animator>().SetBool("selected", false);
             startTexte.GetComponent<Animator>().SetBool("selected", true);
         }
+    }
+        public void launch()
+        {
+            GameManager.Instance.NewGame();
+        }
+
+    internal void launching()
+    {
+        SceneName = INSTRUCTIONS_SCENE;
+        Invoke("launch", 5f);
     }
 }
