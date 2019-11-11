@@ -9,9 +9,9 @@ public class UniformTrashController : MonoBehaviour
     [SerializeField]
     private Bounds area;
     [SerializeField]
-    private float trashDensity;
+    public float trashDensity;
     // Start is called before the first frame update
-    void Start()
+    public void CreateTrashes()
     {
         int trashCount = (int) (4 * area.extents.x * area.extents.y * trashDensity);
 

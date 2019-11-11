@@ -10,17 +10,21 @@ public class UniformWithoutColliderTrashController : MonoBehaviour
     [SerializeField]
     private Bounds area;
     [SerializeField]
-    private float trashDensity;
+    public float trashDensity;
 
-    [SerializeField]
-    private List<Collider> colliders;
 
     [SerializeField]
     private Transform obstacles;
+
+    [SerializeField]
+    private Transform spotlights;
     // Start is called before the first frame update
-    void Start()
+    public void CreateTrashes()
     {
+        List<Collider> colliders = new List<Collider>();
         foreach(Transform child in obstacles)
+            colliders.AddRange(child.GetComponentsInChildren<Collider>());
+        foreach(Transform child in spotlights)
             colliders.AddRange(child.GetComponentsInChildren<Collider>());
 
         int trashCount = (int) (4 * area.extents.x * area.extents.z * trashDensity);
