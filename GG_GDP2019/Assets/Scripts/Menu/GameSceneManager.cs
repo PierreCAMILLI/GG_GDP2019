@@ -24,6 +24,8 @@ public class GameSceneManager : MonoBehaviour
             int playSel = playSels[i];
             CreateHero(playSel, i);
         }
+        GameManager.Instance.difficulty += 100f * GameManager.Instance.playerSelection.Length * 1f / 3f + 33f;
+        GameManager.Instance.level += 1;
     }
 
     private void CreateHero(int playSel, int playNum)

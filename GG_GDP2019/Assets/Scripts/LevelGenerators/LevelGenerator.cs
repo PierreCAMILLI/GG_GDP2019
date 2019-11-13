@@ -8,12 +8,7 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         float difficultyPerGenerator = 0f;
-        if (GameManager.Instance.IsState("GameEnter"))
-        {
-            GameManager.Instance.difficulty += 100f * GameManager.Instance.playerSelection.Length * 1f / 3f + 66.333333f;
-            GameManager.Instance.level += 1;
             difficultyPerGenerator = GameManager.Instance.difficulty;
-        }
             foreach (Transform child in transform)
             {
                 child.GetComponent<Generator>().Generate(difficultyPerGenerator);

@@ -11,7 +11,7 @@ public class MenuState : StateMachineBehaviour
     {
         SceneManager.LoadScene("Scenes/menuScene");
         GameManager.Instance.difficulty = 0f;
-        GameManager.Instance.level = 1;
+        GameManager.Instance.level = 0;
 
     }
 

@@ -27,7 +27,6 @@ public class SpotlightGenerator : Generator
     public override float Generate(float difficulty)
     {
         int spotNumber = (int) (Mathf.Log(difficulty / 100f, 2.6f));
-        spotNumber -= Random.Range(0, spotNumber / 2);
         spotNumber += 1;
 
         float realDifficulty = minSpotDifficulty * (spotNumber);
