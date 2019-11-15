@@ -19,10 +19,12 @@ public class MenuManager : MonoBehaviour
     private InputDevice inputDevice;
     public boutonSelect startTexte;
     public boutonSelect creditsTexte;
+    public boutonSelect quitterTexte;
 
     private int SurQuelBouton;
     private const int SUR_START = 0;
     private const int SUR_CREDITS = 1;
+    private const int SUR_QUITTER = 2;
 
     public PlayersSelectionManager playerSelectionManager;
 
@@ -59,20 +61,41 @@ public class MenuManager : MonoBehaviour
                     BlocStart.SetActive(false);
                     playerSelectionManager.setSceneName(CREDITS_SCENE);
                 }
+                else if (SurQuelBouton == SUR_QUITTER)
+                {
+                    Application.Quit();
+                }
             }
             else if (inputDevice.Direction.WasPressed && inputDevice.Direction.Y != 0)
             {
+                if (inputDevice.Direction.Y < 0)
+                    SurQuelBouton++;
+                else
+                    SurQuelBouton--;
+               
+
+                if (SurQuelBouton < 0)
+                    SurQuelBouton = SUR_QUITTER;
+                else if (SurQuelBouton > SUR_QUITTER)
+                    SurQuelBouton = 0;
+
                 if (SurQuelBouton == SUR_START)
-                {
-                    creditsTexte.GetComponent<Animator>().SetBool("selected", true);
-                    startTexte.GetComponent<Animator>().SetBool("selected", false);
-                    SurQuelBouton = SUR_CREDITS;
-                }
-                else if (SurQuelBouton == SUR_CREDITS)
                 {
                     creditsTexte.GetComponent<Animator>().SetBool("selected", false);
                     startTexte.GetComponent<Animator>().SetBool("selected", true);
-                    SurQuelBouton = SUR_START;
+                    quitterTexte.GetComponent<Animator>().SetBool("selected", false);
+                }
+                else if (SurQuelBouton == SUR_CREDITS)
+                {
+                    creditsTexte.GetComponent<Animator>().SetBool("selected", true);
+                    startTexte.GetComponent<Animator>().SetBool("selected", false);
+                    quitterTexte.GetComponent<Animator>().SetBool("selected", false);
+                }
+                else if (SurQuelBouton == SUR_QUITTER)
+                {
+                    creditsTexte.GetComponent<Animator>().SetBool("selected", false);
+                    startTexte.GetComponent<Animator>().SetBool("selected", false);
+                    quitterTexte.GetComponent<Animator>().SetBool("selected", true);
                 }
             }
         }
@@ -102,6 +125,7 @@ public class MenuManager : MonoBehaviour
                 SurQuelBouton = SUR_START;
                 creditsTexte.GetComponent<Animator>().SetBool("selected", false);
                 startTexte.GetComponent<Animator>().SetBool("selected", true);
+                quitterTexte.GetComponent<Animator>().SetBool("selected", false);
             }
         }
         else if (SceneName == INSTRUCTIONS_SCENE)
@@ -114,7 +138,9 @@ public class MenuManager : MonoBehaviour
         {
             creditsTexte.GetComponent<Animator>().SetBool("selected", false);
             startTexte.GetComponent<Animator>().SetBool("selected", true);
+            quitterTexte.GetComponent<Animator>().SetBool("selected", false);
         }
+        Debug.Log(SurQuelBouton);
     }
         public void launch()
         {
